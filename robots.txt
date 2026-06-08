@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /contact.php
 
-Sitemap: https://hadrun.re/sitemap.xml
+Sitemap: https://hadrun.fr/sitemap.xml

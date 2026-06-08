@@ -878,6 +878,7 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 @media (max-width: 768px) {
   .section { padding: 4rem 0; }
   .section-header { margin-bottom: 2.5rem; }
+  .process-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .cards-3, .cards-2 { grid-template-columns: 1fr; }
   .form-row--2 { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0 2rem; }
