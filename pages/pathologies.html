@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pathologies prises en charge – HADRUN Hospitalisation à Domicile La Réunion</title>
+  <meta name="description" content="Découvrez toutes les pathologies et situations médicales prises en charge par HADRUN à La Réunion : soins palliatifs, chimiothérapie, pansements, perfusions, post-opératoire et bien plus.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hadrun.re/pages/pathologies.html">
+  <meta property="og:title" content="Pathologies prises en charge – HADRUN">
+  <meta property="og:description" content="Toutes les pathologies et soins disponibles en hospitalisation à domicile à La Réunion.">
+  <meta property="og:url" content="https://hadrun.re/pages/pathologies.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      padding: 5rem 0 4rem;
+      text-align: center;
+    }
+    .page-hero h1 { margin: .75rem 0 1rem; }
+    .page-hero p { color: rgba(255,255,255,.82); max-width: 600px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .82rem;
+      color: rgba(255,255,255,.65);
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,.65); }
+    .breadcrumb a:hover { color: white; }
+    .breadcrumb span { color: rgba(255,255,255,.4); }
+
+    .patho-section { padding: 4rem 0; }
+    .patho-section + .patho-section { border-top: 1px solid var(--border); padding-top: 4rem; }
+    .patho-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+    .patho-anchor { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; position: sticky; top: 90px; }
+    .patho-icon-big {
+      width: 72px; height: 72px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .patho-icon-big svg { width: 34px; height: 34px; }
+    .patho-tag {
+      display: inline-flex; align-items: center; gap: .35rem;
+      font-size: .75rem; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .3rem .85rem; border-radius: 99px;
+    }
+    .patho-content h2 { margin-bottom: 1rem; }
+    .patho-content p { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.75; }
+    .patho-list { display: flex; flex-direction: column; gap: .55rem; margin: 1.25rem 0; }
+    .patho-list li {
+      display: flex; align-items: flex-start; gap: .65rem;
+      font-size: .9rem; color: var(--text-muted);
+    }
+    .patho-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--rose);
+      flex-shrink: 0;
+      margin-top: .55rem;
+    }
+    .patho-cta { margin-top: 1.75rem; }
+
+    @media (max-width: 768px) {
+      .patho-layout { grid-template-columns: 1fr; }
+      .patho-anchor { position: static; flex-direction: row; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Accueil HADRUN">
+        <img src="/images/logo.png" alt="HADRUN – Hospitalisation à Domicile La Réunion" class="logo-img">
+      </a>
+      <button class="burger" id="burger-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Navigation principale">
+        <ul role="list">
+          <li><a href="/#soins" class="nav-link">Nos soins</a></li>
+          <li><a href="/#comment-ca-marche" class="nav-link">Comment ça marche</a></li>
+          <li><a href="/pages/pathologies.html" class="nav-link" aria-current="page">Pathologies</a></li>
+          <li><a href="/#professionnels" class="nav-link">Professionnels</a></li>
+          <li><a href="/#faq" class="nav-link">FAQ</a></li>
+          <li><a href="/pages/recrutement.html" class="nav-link">Recrutement</a></li>
+          <li><a href="/#professionnels" class="nav-link nav-cta">Demander une admission</a></li>
+        </ul>
+      </nav>
+      <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="/">Accueil</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Pathologies</span>
+        </nav>
+        <p class="section-eyebrow" style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9)">Indications médicales</p>
+        <h1>Pathologies &amp; soins pris en charge</h1>
+        <p>Découvrez l'ensemble des situations cliniques pour lesquelles HADRUN peut assurer votre prise en charge à domicile, avec la même qualité qu'en milieu hospitalier.</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- PERFUSIONS -->
+      <section class="patho-section" id="perfusions" aria-labelledby="perf-title">
+        <div class="patho-layout">
+          <div class="patho-anchor">
+            <div class="patho-icon-big card-icon--teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <span class="patho-tag" style="background:#CCFBF1;color:#0F766E">Traitement IV</span>
+            <a href="/#professionnels" class="btn btn-secondary" style="font-size:.85rem;padding:.6rem 1.25rem">Demander une admission</a>
+          </div>
+          <div class="patho-content">
+            <h2 id="perf-title">Perfusions &amp; traitements intraveineux</h2>
+            <p>L'administration de médicaments par voie intraveineuse (IV) nécessite traditionnellement une hospitalisation. Grâce à la HAD, ces traitements peuvent être réalisés à votre domicile par nos infirmiers spécialisés, en toute sécurité.</p>
+            <p>Nos équipes maîtrisent l'utilisation de voies veineuses centrales (PICC-line, chambre implantable) et périphériques pour l'administration de traitements complexes.</p>
+            <ul class="patho-list" role="list">
+              <li>Antibiothérapie intraveineuse prolongée (endocardite, ostéite, pneumonie sévère)</li>
+              <li>Nutrition parentérale totale ou partielle</li>
+              <li>Hydratation intraveineuse</li>
+              <li>Antifongiques et antiviraux IV</li>
+              <li>Immunoglobulines intraveineuses</li>
+              <li>Traitements de l'insuffisance cardiaque (diurétiques IV, inotropes)</li>
+              <li>Bisphosphonates intraveineux</li>
+            </ul>
+            <p>Un dispositif de télésurveillance peut être mis en place pour renforcer la sécurité du patient entre les passages infirmiers.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANSEMENTS -->
+      <section class="patho-section" id="pansements" aria-labelledby="panse-title">
+        <div class="patho-layout">
+          <div class="patho-anchor">
+            <div class="patho-icon-big card-icon--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#065F46" stroke-width="2"><path d="M4.5 12.5l3 3 7-7"/><path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0z"/></svg>
+            </div>
+            <span class="patho-tag" style="background:#D1FAE5;color:#065F46">Soins de plaie</span>
+            <a href="/#professionnels" class="btn btn-secondary" style="font-size:.85rem;padding:.6rem 1.25rem">Demander une admission</a>
+          </div>
+          <div class="patho-content">
+            <h2 id="panse-title">Pansements complexes &amp; soins de plaies</h2>
+            <p>Les plaies chroniques nécessitent des soins réguliers et techniques que nos infirmiers réalisent quotidiennement à votre domicile. L'utilisation de protocoles validés garantit une cicatrisation optimale.</p>
+            <ul class="patho-list" role="list">
+              <li>Escarres de stade II à IV</li>
+              <li>Ulcères veineux, artériels ou mixtes des membres inférieurs</li>
+              <li>Pied diabétique (ulcère neuropathique, neuro-ischémique)</li>
+              <li>Plaies post-chirurgicales complexes ou déhiscentes</li>
+              <li>Brûlures étendues en phase de cicatrisation</li>
+              <li>Fistules et stomies nécessitant une surveillance rapprochée</li>
+              <li>Thérapie par pression négative (TPN / VAC)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOINS PALLIATIFS -->
+      <section class="patho-section" id="palliatifs" aria-labelledby="palliat-title">
+        <div class="patho-layout">
+          <div class="patho-anchor">
+            <div class="patho-icon-big card-icon--purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#6D28D9" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <span class="patho-tag" style="background:#EDE9FE;color:#6D28D9">Fin de vie</span>
+            <a href="/#professionnels" class="btn btn-secondary" style="font-size:.85rem;padding:.6rem 1.25rem">Demander une admission</a>
+          </div>
+          <div class="patho-content">
+            <h2 id="palliat-title">Soins palliatifs &amp; accompagnement de fin de vie</h2>
+            <p>Mourir chez soi, entouré de ses proches, est le souhait de nombreux patients. HADRUN s'engage à rendre ce projet possible, en assurant un accompagnement médical, infirmier et psychologique adapté.</p>
+            <p>Notre approche palliative vise à soulager la douleur et les symptômes, à préserver la dignité et à soutenir l'entourage dans cette période difficile.</p>
+            <ul class="patho-list" role="list">
+              <li>Analgésie par voie sous-cutanée ou intraveineuse (pompe PCA)</li>
+              <li>Gestion des symptômes réfractaires (dyspnée, nausées, anxiété)</li>
+              <li>Sédation palliative profonde et continue si nécessaire</li>
+              <li>Soutien psychologique patient et famille</li>
+              <li>Coordination avec l'équipe mobile de soins palliatifs (EMSP)</li>
+              <li>Accompagnement du deuil pour les proches</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHIMIOTHÉRAPIE -->
+      <section class="patho-section" id="chimiotherapie" aria-labelledby="chimio-title">
+        <div class="patho-layout">
+          <div class="patho-anchor">
+            <div class="patho-icon-big card-icon--amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+            </div>
+            <span class="patho-tag" style="background:#FEF3C7;color:#B45309">Oncologie</span>
+            <a href="/#professionnels" class="btn btn-secondary" style="font-size:.85rem;padding:.6rem 1.25rem">Demander une admission</a>
+          </div>
+          <div class="patho-content">
+            <h2 id="chimio-title">Chimiothérapie &amp; traitements anticancéreux à domicile</h2>
+            <p>Certaines chimiothérapies peuvent être administrées à domicile, permettant au patient de continuer son traitement anticancéreux sans quitter son environnement. Cette modalité est décidée en concertation avec l'oncologue référent.</p>
+            <ul class="patho-list" role="list">
+              <li>Chimiothérapies à faible risque en perfusion (5-FU, capécitabine IV, etc.)</li>
+              <li>Thérapies ciblées administrables à domicile</li>
+              <li>Immunothérapies en maintenance</li>
+              <li>Gestion des effets secondaires à domicile (nausées, aplasie, mucite)</li>
+              <li>Transfusions de culots globulaires et plaquettaires</li>
+              <li>Injections de facteurs de croissance (G-CSF)</li>
+            </ul>
+            <p>La décision d'une chimiothérapie à domicile est toujours prise en concertation multidisciplinaire (oncologue, médecin coordonnateur HAD, infirmier spécialisé).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- POST-OPÉRATOIRE -->
+      <section class="patho-section" id="postoperatoire" aria-labelledby="postop-title">
+        <div class="patho-layout">
+          <div class="patho-anchor">
+            <div class="patho-icon-big card-icon--blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <span class="patho-tag" style="background:#DBEAFE;color:#1D4ED8">Post-opératoire</span>
+            <a href="/#professionnels" class="btn btn-secondary" style="font-size:.85rem;padding:.6rem 1.25rem">Demander une admission</a>
+          </div>
+          <div class="patho-content">
+            <h2 id="postop-title">Soins post-opératoires &amp; rééducation</h2>
+            <p>La HAD permet un retour précoce à domicile après une intervention chirurgicale, tout en garantissant un suivi médical et infirmier rigoureux pour prévenir les complications post-opératoires.</p>
+            <ul class="patho-list" role="list">
+              <li>Surveillance post-opératoire (orthopédie, chirurgie abdominale, cardiaque)</li>
+              <li>Kinésithérapie respiratoire et motrice</li>
+              <li>Rééducation post-AVC (orthophonie, ergothérapie)</li>
+              <li>Rééducation après prothèse de hanche ou genou</li>
+              <li>Gestion des drains et dispositifs post-chirurgicaux</li>
+              <li>Prévention des thromboses (injections d'HBPM)</li>
+              <li>Réadaptation cardiaque post-infarctus</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-banner" aria-labelledby="cta-patho-title">
+      <div class="container">
+        <h2 id="cta-patho-title">Votre situation n'est pas listée ?</h2>
+        <p>Contactez-nous pour évaluer si votre situation médicale peut bénéficier d'une prise en charge en hospitalisation à domicile.</p>
+        <div class="cta-actions">
+          <a href="/#professionnels" class="btn btn-white">Nous contacter</a>
+          <a href="tel:+262262000000" class="btn btn-outline">Appeler le service d'admission au 0262 XX XX XX</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo logo--white" aria-label="Retour à l'accueil HADRUN">
+          <img src="/images/logo.png" alt="HADRUN" class="logo-img logo-img--footer">
+        </a>
+        <p>Service d'hospitalisation à domicile à La Réunion.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Nos soins</h3>
+        <ul role="list">
+          <li><a href="#perfusions">Perfusions IV</a></li>
+          <li><a href="#pansements">Pansements complexes</a></li>
+          <li><a href="#palliatifs">Soins palliatifs</a></li>
+          <li><a href="#chimiotherapie">Chimiothérapie</a></li>
+          <li><a href="#postoperatoire">Post-opératoire</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul role="list">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/#comment-ca-marche">Comment ça marche</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/#professionnels">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul role="list">
+          <li><a href="mailto:contact@hadrun.re">contact@hadrun.re</a></li>
+          <li><a href="tel:+262262000000">0262 XX XX XX</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2025 HADRUN – Tous droits réservés</p>
+        <ul role="list">
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top" aria-label="Retour en haut de page" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

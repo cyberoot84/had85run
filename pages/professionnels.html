@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace professionnels de santé – HADRUN La Réunion</title>
+  <meta name="description" content="Espace dédié aux professionnels de santé souhaitant adresser un patient à HADRUN. Formulaire de prescription, protocoles, documents téléchargeables.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hadrun.re/pages/professionnels.html">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white; padding: 5rem 0 4rem; text-align: center;
+    }
+    .page-hero h1 { margin: .75rem 0 1rem; }
+    .page-hero p { color: rgba(255,255,255,.82); max-width: 640px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .82rem; color: rgba(255,255,255,.65);
+      justify-content: center; margin-bottom: 1rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,.65); }
+    .breadcrumb a:hover { color: white; }
+
+    .doc-card {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+      transition: var(--transition);
+    }
+    .doc-card:hover { border-color: var(--rose); box-shadow: var(--shadow-sm); }
+    .doc-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--blue-light); display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .doc-icon svg { width: 20px; height: 20px; color: var(--primary); }
+    .doc-info { flex: 1; }
+    .doc-info strong { display: block; font-size: .9rem; margin-bottom: .15rem; }
+    .doc-info span { font-size: .8rem; color: var(--text-muted); }
+    .doc-dl {
+      font-size: .82rem; font-weight: 600; color: var(--primary);
+      display: flex; align-items: center; gap: .35rem; white-space: nowrap;
+    }
+    .doc-dl svg { width: 14px; height: 14px; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Accueil HADRUN">
+        <img src="/images/logo.png" alt="HADRUN – Hospitalisation à Domicile La Réunion" class="logo-img">
+      </a>
+      <button class="burger" id="burger-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Navigation principale">
+        <ul role="list">
+          <li><a href="/#soins" class="nav-link">Nos soins</a></li>
+          <li><a href="/#comment-ca-marche" class="nav-link">Comment ça marche</a></li>
+          <li><a href="/pages/pathologies.html" class="nav-link">Pathologies</a></li>
+          <li><a href="/pages/professionnels.html" class="nav-link" aria-current="page">Professionnels</a></li>
+          <li><a href="/#faq" class="nav-link">FAQ</a></li>
+          <li><a href="/pages/recrutement.html" class="nav-link">Recrutement</a></li>
+          <li><a href="#formulaire" class="nav-link nav-cta">Adresser un patient</a></li>
+        </ul>
+      </nav>
+      <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="/">Accueil</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Professionnels</span>
+        </nav>
+        <p class="section-eyebrow" style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9)">Espace prescripteurs</p>
+        <h1>Espace professionnels de santé</h1>
+        <p>Médecin traitant, spécialiste ou équipe hospitalière : retrouvez ici toutes les ressources pour adresser un patient à HADRUN et suivre sa prise en charge.</p>
+      </div>
+    </div>
+
+    <!-- COMMENT ADRESSER -->
+    <section class="section" id="admissions" aria-labelledby="adresser-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Prescription</p>
+          <h2 id="adresser-title">Comment adresser un patient ?</h2>
+          <p class="section-desc">La demande d'admission peut être faite par téléphone, email ou formulaire. Notre équipe évalue la faisabilité et organise la prise en charge sous 24 h.</p>
+        </div>
+
+        <div class="cards-grid cards-3">
+          <div class="card" data-aos>
+            <div class="card-icon card-icon--teal" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8a16 16 0 0 0 6 6l.27-.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
+            </div>
+            <h3 class="card-title">Par téléphone</h3>
+            <p class="card-desc">Ligne directe prescripteurs disponible 7j/7. Notre médecin coordonnateur peut être joint en urgence pour toute demande d'admission rapide.</p>
+            <a href="tel:+262262000000" class="card-link">0262 XX XX XX <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="card" data-aos>
+            <div class="card-icon card-icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h3 class="card-title">Par email</h3>
+            <p class="card-desc">Transmettez votre demande d'admission par email avec le résumé clinique du patient. Réponse garantie sous 4 h ouvrées.</p>
+            <a href="mailto:admissions@hadrun.re" class="card-link">admissions@hadrun.re <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="card" data-aos>
+            <div class="card-icon card-icon--blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3 class="card-title">Formulaire en ligne</h3>
+            <p class="card-desc">Remplissez le formulaire de demande d'admission depuis notre page contact. Traitement prioritaire pour les demandes taggées « Prescripteur ».</p>
+            <a href="#formulaire" class="card-link">Formulaire de contact <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRITÈRES D'ADMISSION -->
+    <section class="section section-alt" id="criteres" aria-labelledby="criteres-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Éligibilité</p>
+          <h2 id="criteres-title">Critères d'admission en HAD</h2>
+          <p class="section-desc">Pour bénéficier de la HAD, le patient doit répondre à plusieurs critères médicaux, sociaux et environnementaux.</p>
+        </div>
+
+        <div class="cards-grid cards-2">
+          <div class="card" data-aos>
+            <h3 class="card-title" style="color:var(--primary);margin-bottom:1rem">Critères médicaux requis</h3>
+            <ul class="patho-list" role="list" style="list-style:none;padding:0">
+              <li style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--text-muted);margin-bottom:.55rem">
+                <span style="color:#10B981;margin-top:.1rem">✓</span> Nécessité de soins complexes ou pluriquotidiens
+              </li>
+              <li style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--text-muted);margin-bottom:.55rem">
+                <span style="color:#10B981;margin-top:.1rem">✓</span> Absence de nécessité d'une présence médicale permanente
+              </li>
+              <li style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--text-muted);margin-bottom:.55rem">
+                <span style="color:#10B981;margin-top:.1rem">✓</span> Prescription médicale valide (médecin traitant ou hospitalier)
+              </li>
+              <li style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--text-muted);margin-bottom:.55rem">
+                <span style="color:#10B981;margin-top:.1rem">✓</span> Pathologie relevant des indications HAD réglementaires
+              </li>
+              <li style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--text-muted)">
+                <span style="color:#10B981;margin-top:.1rem">✓</span> État clinique compatible avec un retour ou maintien à domicile
+              </li>
+            </ul>
+          </div>
+
+          <div class="card" data-aos>
+            <h3 class="card-title" style="color:var(--primary);margin-bottom:1rem">Critères sociaux et environnementaux</h3>
+            <ul role="list" style="list-style:none;padding:0">
+              <li style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--text-muted);margin-bottom:.55rem">
+                <span style="color:#10B981;margin-top:.1rem">✓</span> Consentement écrit du patient (et du représentant légal si mineur)
+              </li>
+              <li style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--text-muted);margin-bottom:.55rem">
+                <span style="color:#10B981;margin-top:.1rem">✓</span> Domicile situé dans la zone d'intervention HADRUN (île entière)
+              </li>
+              <li style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--text-muted);margin-bottom:.55rem">
+                <span style="color:#10B981;margin-top:.1rem">✓</span> Entourage disponible et informé
+              </li>
+              <li style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--text-muted);margin-bottom:.55rem">
+                <span style="color:#10B981;margin-top:.1rem">✓</span> Logement adapté à la réalisation des soins
+              </li>
+              <li style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--text-muted)">
+                <span style="color:#10B981;margin-top:.1rem">✓</span> Accord de l'Assurance Maladie (démarche effectuée par HADRUN)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCUMENTS -->
+    <section class="section" id="docs" aria-labelledby="docs-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Ressources</p>
+          <h2 id="docs-title">Documents téléchargeables</h2>
+          <p class="section-desc">Retrouvez ici les formulaires et protocoles nécessaires pour la prescription et le suivi des patients en HAD.</p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:.85rem;max-width:700px;margin:0 auto">
+          <div class="doc-card">
+            <div class="doc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div class="doc-info">
+              <strong>Formulaire de demande d'admission HAD</strong>
+              <span>PDF · À compléter et transmettre par email ou fax</span>
+            </div>
+            <a href="/documents/demande-admission-hadrun.pdf" class="doc-dl" aria-label="Télécharger le formulaire de demande d'admission">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger
+            </a>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div class="doc-info">
+              <strong>Guide prescripteur HADRUN 2025</strong>
+              <span>PDF · Critères d'admission, contacts, protocoles</span>
+            </div>
+            <a href="/documents/guide-prescripteur-hadrun.pdf" class="doc-dl" aria-label="Télécharger le guide prescripteur">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner" aria-labelledby="cta-pro-title">
+      <div class="container">
+        <h2 id="cta-pro-title">Prêt à adresser votre premier patient ?</h2>
+        <p>Notre équipe est disponible pour répondre à toutes vos questions et organiser la prise en charge dans les meilleurs délais.</p>
+        <div class="cta-actions">
+          <a href="tel:+262262000000" class="btn btn-white">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8a16 16 0 0 0 6 6l.27-.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
+            Appeler le service d'admission au 0262 XX XX XX
+          </a>
+          <a href="#formulaire" class="btn btn-outline">Formulaire en ligne</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULAIRE DE CONTACT / ADMISSION -->
+    <section class="section contact-section" id="formulaire" aria-labelledby="formulaire-title">
+      <div class="container contact-layout">
+        <div class="contact-info">
+          <p class="section-eyebrow">Contact direct</p>
+          <h2 id="formulaire-title">Demande d'admission ou renseignements</h2>
+          <p>Médecin prescripteur, équipe hospitalière ou patient : remplissez ce formulaire pour toute demande d'admission ou information. Nous vous répondons sous 24 h ouvrées.</p>
+
+          <ul class="contact-details" role="list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8a16 16 0 0 0 6 6l.27-.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
+              <div>
+                <strong>Ligne directe admissions</strong>
+                <a href="tel:+262262000000">0262 XX XX XX</a>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <strong>Email prescripteurs</strong>
+                <a href="mailto:admissions@hadrun.re">admissions@hadrun.re</a>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <strong>Disponibilité</strong>
+                <span>7j/7 · Astreinte 24h/24 pour les urgences</span>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Zone de couverture</strong>
+                <span>Toute l'île de La Réunion</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contact-form" action="/contact.php" method="post" novalidate>
+            <div class="form-row--2">
+              <div class="form-group">
+                <label for="nom">Nom <span aria-hidden="true">*</span></label>
+                <input type="text" id="nom" name="nom" autocomplete="family-name" required aria-required="true" placeholder="Dupont">
+              </div>
+              <div class="form-group">
+                <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+                <input type="text" id="prenom" name="prenom" autocomplete="given-name" required aria-required="true" placeholder="Marie">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" placeholder="votre@email.re">
+            </div>
+
+            <div class="form-group">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="0262 XX XX XX">
+            </div>
+
+            <div class="form-group">
+              <label for="qualite">Vous êtes <span aria-hidden="true">*</span></label>
+              <select id="qualite" name="qualite" required aria-required="true">
+                <option value="">Sélectionner votre qualité</option>
+                <option value="medecin">Médecin prescripteur</option>
+                <option value="hospitalier">Médecin hospitalier / Spécialiste</option>
+                <option value="infirmier">Infirmier libéral</option>
+                <option value="autre_pro">Autre professionnel de santé</option>
+                <option value="patient">Patient</option>
+                <option value="famille">Famille / Proche</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="sujet">Objet de la demande <span aria-hidden="true">*</span></label>
+              <select id="sujet" name="sujet" required aria-required="true">
+                <option value="">Choisissez un objet</option>
+                <option value="admission">Demande d'admission</option>
+                <option value="pro">Contact prescripteur</option>
+                <option value="info_soins">Information sur les soins</option>
+                <option value="info_admission">Information sur l'admission</option>
+                <option value="autre">Autre demande</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="4" required aria-required="true" placeholder="Décrivez la situation du patient ou votre demande..."></textarea>
+            </div>
+
+            <div class="form-group form-group--check">
+              <label class="checkbox-label">
+                <input type="checkbox" name="rgpd" id="rgpd" required aria-required="true">
+                <span>J'accepte que mes données soient traitées dans le cadre de ma demande. <a href="/mentions-legales.html#rgpd" style="color:var(--primary)">En savoir plus</a></span>
+              </label>
+            </div>
+
+            <div class="form-honeypot" aria-hidden="true">
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+              <span class="btn-text">Envoyer ma demande</span>
+              <span class="btn-loading" aria-hidden="true"></span>
+            </button>
+
+            <div class="form-feedback" id="form-feedback" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo logo--white" aria-label="Retour à l'accueil HADRUN">
+          <img src="/images/logo.png" alt="HADRUN" class="logo-img logo-img--footer">
+        </a>
+        <p>Service d'hospitalisation à domicile à La Réunion.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Prescrire</h3>
+        <ul role="list">
+          <li><a href="#admissions">Comment adresser</a></li>
+          <li><a href="#criteres">Critères d'admission</a></li>
+          <li><a href="#docs">Documents</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul role="list">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/pages/pathologies.html">Pathologies</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact admissions</h3>
+        <ul role="list">
+          <li><a href="mailto:admissions@hadrun.re">admissions@hadrun.re</a></li>
+          <li><a href="tel:+262262000000">0262 XX XX XX</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2025 HADRUN – Tous droits réservés</p>
+        <ul role="list">
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top" aria-label="Retour en haut de page" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

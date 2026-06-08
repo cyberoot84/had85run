@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carte des liens – HADRUN</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0A1628;color:#E8F0FB;overflow:hidden;height:100vh;width:100vw}
+
+/* ── TOOLBAR ── */
+#toolbar{
+  position:fixed;top:0;left:0;right:0;height:48px;
+  background:#111F3D;border-bottom:1px solid #1D3461;
+  display:flex;align-items:center;gap:12px;padding:0 16px;z-index:200;
+}
+#toolbar h1{font-size:.9rem;font-weight:700;color:#fff;white-space:nowrap}
+.tb-sep{width:1px;height:24px;background:#1D3461}
+.filter-btn{
+  font-size:.72rem;padding:.3rem .7rem;border-radius:20px;
+  border:1px solid #284B8C;background:transparent;color:#BFD0EF;cursor:pointer;
+  transition:.15s;white-space:nowrap;
+}
+.filter-btn:hover,.filter-btn.on{background:#1D3461;color:#fff;border-color:#3A6BC4}
+.filter-btn.on{border-color:var(--c)}
+.legend{display:flex;gap:10px;margin-left:auto;flex-wrap:wrap}
+.leg{display:flex;align-items:center;gap:5px;font-size:.68rem;color:#5B6E8C}
+.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+#zoom-info{font-size:.68rem;color:#5B6E8C;white-space:nowrap}
+
+/* ── CANVAS ── */
+#scene{position:fixed;top:48px;left:0;right:0;bottom:0;overflow:hidden;cursor:grab}
+#scene.dragging{cursor:grabbing}
+#world{position:absolute;transform-origin:0 0}
+svg#svg{position:absolute;top:0;left:0;overflow:visible;pointer-events:none}
+
+/* ── PAGE CARD ── */
+.pg{
+  position:absolute;
+  background:#111F3D;
+  border:2px solid #1D3461;
+  border-radius:14px;
+  width:230px;
+  transition:border-color .2s,box-shadow .2s;
+  cursor:default;
+  user-select:none;
+}
+.pg:hover{border-color:#3A6BC4;box-shadow:0 0 0 3px rgba(58,107,196,.15)}
+.pg-head{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 12px 8px;
+  border-bottom:1px solid #1D3461;
+  cursor:grab;
+}
+.pg-head:active{cursor:grabbing;}
+.pg-icon{font-size:1.1rem}
+.pg-title{font-size:.82rem;font-weight:700;color:#fff;line-height:1.2}
+.pg-url{font-size:.65rem;color:#5B6E8C;font-family:monospace;margin-top:1px}
+
+/* ── SECTIONS DANS UNE PAGE ── */
+.pg-body{padding:8px 0}
+.sec{padding:0}
+.sec-label{
+  font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:#5B6E8C;padding:6px 12px 3px;
+}
+.lnk{
+  display:flex;align-items:flex-start;gap:6px;
+  padding:4px 12px;font-size:.7rem;color:#BFD0EF;
+  transition:background .12s;cursor:pointer;
+  border-radius:0;
+}
+.lnk:hover{background:rgba(255,255,255,.05)}
+.lnk.highlighted{background:rgba(201,64,112,.15);color:#fff}
+.lnk.faded{opacity:.15}
+.lnk-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.lnk-txt{line-height:1.4}
+.lnk-dest{font-size:.62rem;font-family:monospace;color:#5B6E8C;display:block;margin-top:1px}
+.sec-div{height:1px;background:#1A2A4A;margin:4px 0}
+
+/* ── EXTERNAL NODES ── */
+.ext-node{
+  position:absolute;
+  border-radius:10px;
+  padding:10px 14px;
+  border:1.5px dashed;
+  width:190px;
+  cursor:grab;
+  user-select:none;
+}
+.ext-node:active{cursor:grabbing;}
+.ext-node .en-title{font-size:.78rem;font-weight:700;margin-bottom:4px}
+.ext-node .en-item{font-size:.65rem;color:#8A9BBF;font-family:monospace;margin-top:2px}
+
+/* ── TOOLTIP ── */
+#tip{
+  position:fixed;
+  background:#1D3461;
+  border:1px solid #3A6BC4;
+  border-radius:8px;
+  padding:8px 12px;
+  font-size:.72rem;
+  color:#E8F0FB;
+  pointer-events:none;
+  z-index:300;
+  max-width:260px;
+  line-height:1.5;
+  display:none;
+}
+#tip .tip-dest{font-family:monospace;color:#10B981;font-size:.68rem;margin-top:3px}
+#tip .tip-type{display:inline-block;padding:.1rem .4rem;border-radius:4px;font-size:.62rem;font-weight:700;margin-top:4px}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div id="toolbar">
+  <h1>🗺 Carte des liens — HADRUN</h1>
+  <div class="tb-sep"></div>
+  <button class="filter-btn on" data-type="all">Tous</button>
+  <button class="filter-btn" data-type="page"   style="--c:#3A6BC4">→ Pages</button>
+  <button class="filter-btn" data-type="anchor" style="--c:#10B981">⚓ Ancres</button>
+  <button class="filter-btn" data-type="ext"    style="--c:#0F766E">📞 Tel/Ext</button>
+  <button class="filter-btn" data-type="mail"   style="--c:#B45309">✉ Email</button>
+  <button class="filter-btn" data-type="form"   style="--c:#6D28D9">⚙ Forms</button>
+  <div class="legend">
+    <div class="leg"><div class="leg-dot" style="background:#3A6BC4"></div>Page</div>
+    <div class="leg"><div class="leg-dot" style="background:#10B981"></div>Ancre</div>
+    <div class="leg"><div class="leg-dot" style="background:#0F766E"></div>Tel/Ext</div>
+    <div class="leg"><div class="leg-dot" style="background:#B45309"></div>Email</div>
+    <div class="leg"><div class="leg-dot" style="background:#6D28D9"></div>Form</div>
+  </div>
+  <div class="tb-sep"></div>
+  <span id="zoom-info">Molette zoomer · Drag fond = vue · Drag bloc = déplacer</span>
+  <div class="tb-sep"></div>
+  <button class="filter-btn" onclick="exportDrawio()" style="--c:#10B981;background:#10B98122;border-color:#10B981;color:#10B981;font-weight:700">⬇ draw.io</button>
+</div>
+
+<div id="scene">
+  <div id="world">
+    <svg id="svg"></svg>
+  </div>
+</div>
+<div id="tip"></div>
+
+<script>
+// ════════════════════════════════════════════════════════════════════════════
+// DONNÉES
+// ════════════════════════════════════════════════════════════════════════════
+const COLORS = {
+  page:   '#3A6BC4',
+  anchor: '#10B981',
+  ext:    '#0F766E',
+  mail:   '#B45309',
+  form:   '#6D28D9',
+};
+
+// Chaque page : { id, icon, title, url, x, y, sections:[{label, links:[{id,type,label,dest,target_id}]}] }
+const pages = [
+  {
+    id:'index', icon:'🏠', title:'Page d\'accueil', url:'index.html', x:420, y:60,
+    sections:[
+      { label:'Navigation', links:[
+        {id:'l1',  type:'page',   label:'Nos soins',           dest:'/#soins',              target:'anchor-soins'},
+        {id:'l2',  type:'anchor', label:'Comment ça marche',   dest:'/#comment-ca-marche',  target:'anchor-ccm'},
+        {id:'l3',  type:'page',   label:'Pathologies',         dest:'pathologies.html',      target:'pathologies'},
+        {id:'l4',  type:'anchor', label:'Professionnels',      dest:'/#professionnels',      target:'anchor-pro'},
+        {id:'l5',  type:'anchor', label:'FAQ',                 dest:'/#faq',                target:'anchor-faq'},
+        {id:'l6',  type:'page',   label:'Recrutement',         dest:'recrutement.html',      target:'recrutement'},
+        {id:'l7',  type:'anchor', label:'Demander une admission (CTA nav)', dest:'/#professionnels', target:'anchor-pro'},
+      ]},
+      { label:'Hero', links:[
+        {id:'l8',  type:'anchor', label:'Btn → Demander une admission', dest:'/#professionnels', target:'anchor-pro'},
+        {id:'l9',  type:'anchor', label:'Btn → Notre offre de soins',   dest:'/#soins',          target:'anchor-soins'},
+      ]},
+      { label:'Section — Nos soins', links:[
+        {id:'l10', type:'page', label:'Perfusions → En savoir plus',     dest:'pathologies.html#perfusions',      target:'pathologies'},
+        {id:'l11', type:'page', label:'Pansements → En savoir plus',     dest:'pathologies.html#pansements',      target:'pathologies'},
+        {id:'l12', type:'page', label:'Palliatifs → En savoir plus',     dest:'pathologies.html#palliatifs',      target:'pathologies'},
+        {id:'l13', type:'page', label:'Chimiothérapie → En savoir plus', dest:'pathologies.html#chimiotherapie', target:'pathologies'},
+        {id:'l14', type:'page', label:'Post-op → En savoir plus',        dest:'pathologies.html#postoperatoire', target:'pathologies'},
+        {id:'l15', type:'page', label:'Btn → Toutes les pathologies',    dest:'pathologies.html',                target:'pathologies'},
+      ]},
+      { label:'Section — Professionnels', links:[
+        {id:'l16', type:'page',   label:'Btn → Adresser un patient',     dest:'professionnels.html#formulaire', target:'professionnels'},
+        {id:'l17', type:'page',   label:'Btn → Documentation médicale',  dest:'professionnels.html',            target:'professionnels'},
+      ]},
+      { label:'Bandeau CTA', links:[
+        {id:'l18', type:'anchor', label:'Btn → Demander une admission',  dest:'/#professionnels',    target:'anchor-pro'},
+        {id:'l19', type:'ext',    label:'Btn → Appeler le service',      dest:'tel:+262262000000',   target:'ext-tel'},
+      ]},
+      { label:'Formulaire de contact', links:[
+        {id:'l20', type:'form',   label:'Form POST → contact.php',       dest:'contact.php',         target:'ext-php'},
+      ]},
+      { label:'Footer', links:[
+        {id:'l21', type:'page',   label:'Perfusions IV',           dest:'pathologies.html#perfusions',     target:'pathologies'},
+        {id:'l22', type:'page',   label:'Pansements complexes',    dest:'pathologies.html#pansements',     target:'pathologies'},
+        {id:'l23', type:'page',   label:'Soins palliatifs',        dest:'pathologies.html#palliatifs',     target:'pathologies'},
+        {id:'l24', type:'page',   label:'Chimiothérapie',          dest:'pathologies.html#chimiotherapie',target:'pathologies'},
+        {id:'l25', type:'page',   label:'Post-opératoire',         dest:'pathologies.html#postoperatoire',target:'pathologies'},
+        {id:'l26', type:'anchor', label:'Comment ça marche',       dest:'/#comment-ca-marche', target:'anchor-ccm'},
+        {id:'l27', type:'anchor', label:'Avantages HAD',           dest:'/#avantages',         target:'anchor-avantages'},
+        {id:'l28', type:'anchor', label:'FAQ',                     dest:'/#faq',               target:'anchor-faq'},
+        {id:'l29', type:'page',   label:'Espace professionnels',   dest:'professionnels.html', target:'professionnels'},
+        {id:'l30', type:'page',   label:'Formulaire de contact',   dest:'professionnels.html#formulaire', target:'professionnels'},
+        {id:'l31', type:'mail',   label:'contact@hadrun.re',       dest:'mailto:contact@hadrun.re',target:'ext-mail'},
+        {id:'l32', type:'ext',    label:'0262 XX XX XX',           dest:'tel:+262262000000',   target:'ext-tel'},
+        {id:'l33', type:'page',   label:'Mentions légales',        dest:'mentions-legales.html',target:'mentions'},
+        {id:'l34', type:'page',   label:'Cookies',                 dest:'mentions-legales.html#cookies',target:'mentions'},
+      ]},
+    ]
+  },
+  {
+    id:'pathologies', icon:'🩺', title:'Pathologies', url:'pages/pathologies.html', x:60, y:680,
+    sections:[
+      { label:'Navigation', links:[
+        {id:'p1', type:'page',   label:'Accueil',          dest:'/',                   target:'index'},
+        {id:'p2', type:'anchor', label:'Professionnels',   dest:'/#professionnels',    target:'anchor-pro'},
+        {id:'p3', type:'anchor', label:'FAQ',              dest:'/#faq',               target:'anchor-faq'},
+        {id:'p4', type:'page',   label:'Recrutement',      dest:'recrutement.html',    target:'recrutement'},
+      ]},
+      { label:'Boutons "Demander une admission" (×5)', links:[
+        {id:'p5', type:'anchor', label:'→ /#professionnels (×5)', dest:'/#professionnels', target:'anchor-pro'},
+      ]},
+      { label:'Bandeau CTA', links:[
+        {id:'p6', type:'anchor', label:'Nous contacter → /#professionnels', dest:'/#professionnels', target:'anchor-pro'},
+        {id:'p7', type:'ext',    label:'Appeler le service d\'admission',   dest:'tel:+262262000000', target:'ext-tel'},
+      ]},
+      { label:'Footer', links:[
+        {id:'p8', type:'page',   label:'professionnels.html',  dest:'professionnels.html', target:'professionnels'},
+        {id:'p9', type:'page',   label:'mentions-legales.html',dest:'mentions-legales.html',target:'mentions'},
+        {id:'p10',type:'mail',   label:'contact@hadrun.re',    dest:'mailto:contact@hadrun.re',target:'ext-mail'},
+        {id:'p11',type:'ext',    label:'0262 XX XX XX',        dest:'tel:+262262000000',   target:'ext-tel'},
+      ]},
+    ]
+  },
+  {
+    id:'professionnels', icon:'👨‍⚕️', title:'Professionnels', url:'pages/professionnels.html', x:420, y:680,
+    sections:[
+      { label:'Navigation', links:[
+        {id:'pr1', type:'page',   label:'Accueil',         dest:'/',                target:'index'},
+        {id:'pr2', type:'page',   label:'Pathologies',     dest:'pathologies.html', target:'pathologies'},
+        {id:'pr3', type:'anchor', label:'Adresser (CTA) → #formulaire', dest:'#formulaire', target:'professionnels'},
+        {id:'pr4', type:'page',   label:'Recrutement',     dest:'recrutement.html', target:'recrutement'},
+      ]},
+      { label:'Section — Comment adresser', links:[
+        {id:'pr5', type:'ext',  label:'Téléphone',              dest:'tel:+262262000000',      target:'ext-tel'},
+        {id:'pr6', type:'mail', label:'admissions@hadrun.re',   dest:'mailto:admissions@hadrun.re',target:'ext-mail'},
+        {id:'pr7', type:'anchor',label:'Formulaire en ligne → #formulaire', dest:'#formulaire', target:'professionnels'},
+      ]},
+      { label:'Section — Documents', links:[
+        {id:'pr8', type:'page',  label:'Formulaire PDF ⚠️ (absent)', dest:'/documents/demande-admission-hadrun.pdf', target:null},
+        {id:'pr9', type:'page',  label:'Guide prescripteur PDF ⚠️ (absent)', dest:'/documents/guide-prescripteur-hadrun.pdf', target:null},
+      ]},
+      { label:'Bandeau CTA', links:[
+        {id:'pr10',type:'ext',   label:'Appeler le service d\'admission', dest:'tel:+262262000000', target:'ext-tel'},
+        {id:'pr11',type:'anchor',label:'Formulaire en ligne → #formulaire', dest:'#formulaire', target:'professionnels'},
+      ]},
+      { label:'Formulaire #formulaire', links:[
+        {id:'pr12',type:'form',  label:'Form POST → contact.php', dest:'contact.php', target:'ext-php'},
+        {id:'pr13',type:'page',  label:'RGPD → mentions-legales.html#rgpd', dest:'mentions-legales.html#rgpd', target:'mentions'},
+      ]},
+      { label:'Footer', links:[
+        {id:'pr14',type:'mail',  label:'admissions@hadrun.re', dest:'mailto:admissions@hadrun.re',target:'ext-mail'},
+        {id:'pr15',type:'ext',   label:'0262 XX XX XX',        dest:'tel:+262262000000',   target:'ext-tel'},
+        {id:'pr16',type:'page',  label:'Mentions légales',     dest:'mentions-legales.html',target:'mentions'},
+      ]},
+    ]
+  },
+  {
+    id:'recrutement', icon:'💼', title:'Recrutement', url:'pages/recrutement.html', x:780, y:680,
+    sections:[
+      { label:'Navigation', links:[
+        {id:'r1', type:'page',   label:'Accueil',        dest:'/',                target:'index'},
+        {id:'r2', type:'page',   label:'Pathologies',    dest:'pathologies.html', target:'pathologies'},
+        {id:'r3', type:'page',   label:'Professionnels', dest:'professionnels.html',target:'professionnels'},
+        {id:'r4', type:'anchor', label:'FAQ',            dest:'/#faq',            target:'anchor-faq'},
+      ]},
+      { label:'Offres — Boutons Postuler (×4)', links:[
+        {id:'r5', type:'anchor', label:'→ #candidature (×4)', dest:'#candidature', target:'recrutement'},
+      ]},
+      { label:'Lien candidature spontanée', links:[
+        {id:'r6', type:'anchor', label:'→ #candidature', dest:'#candidature', target:'recrutement'},
+      ]},
+      { label:'Formulaire #candidature', links:[
+        {id:'r7', type:'form',  label:'Form POST → contact.php', dest:'contact.php', target:'ext-php'},
+        {id:'r8', type:'page',  label:'RGPD → mentions-legales.html#rgpd', dest:'mentions-legales.html#rgpd', target:'mentions'},
+      ]},
+      { label:'Footer', links:[
+        {id:'r9', type:'mail',  label:'rh@hadrun.re',     dest:'mailto:rh@hadrun.re',    target:'ext-mail'},
+        {id:'r10',type:'ext',   label:'0262 XX XX XX',    dest:'tel:+262262000000',      target:'ext-tel'},
+        {id:'r11',type:'page',  label:'Mentions légales', dest:'mentions-legales.html',  target:'mentions'},
+      ]},
+    ]
+  },
+  {
+    id:'mentions', icon:'📋', title:'Mentions légales', url:'mentions-legales.html', x:1140, y:680,
+    sections:[
+      { label:'Navigation', links:[
+        {id:'m1', type:'page',  label:'Accueil',     dest:'/',                target:'index'},
+        {id:'m2', type:'page',  label:'Recrutement', dest:'recrutement.html', target:'recrutement'},
+        {id:'m3', type:'anchor',label:'Contact → /#professionnels', dest:'/#professionnels', target:'anchor-pro'},
+      ]},
+      { label:'Contenu', links:[
+        {id:'m4', type:'mail',  label:'contact@hadrun.re',   dest:'mailto:contact@hadrun.re', target:'ext-mail'},
+        {id:'m5', type:'mail',  label:'dpo@hadrun.re',       dest:'mailto:dpo@hadrun.re',     target:'ext-mail'},
+        {id:'m6', type:'ext',   label:'CNIL (site externe)', dest:'https://www.cnil.fr',      target:'ext-tel'},
+      ]},
+      { label:'Footer', links:[
+        {id:'m7', type:'page',  label:'Mentions légales (self)', dest:'mentions-legales.html', target:'mentions'},
+        {id:'m8', type:'page',  label:'Accueil',                 dest:'/',                     target:'index'},
+      ]},
+    ]
+  },
+];
+
+// Ancres internes à index.html (nœuds virtuels)
+const anchors = [
+  {id:'anchor-soins',      label:'#soins',             x:120,  y:420, color:'#10B981'},
+  {id:'anchor-ccm',        label:'#comment-ca-marche', x:280,  y:420, color:'#10B981'},
+  {id:'anchor-avantages',  label:'#avantages',         x:440,  y:420, color:'#10B981'},
+  {id:'anchor-pro',        label:'#professionnels',    x:600,  y:420, color:'#C94070'},
+  {id:'anchor-faq',        label:'#faq',               x:760,  y:420, color:'#10B981'},
+];
+
+// Nœuds externes
+const externals = [
+  {id:'ext-tel',  icon:'📞', title:'Téléphone',       sub:'0262 XX XX XX',     color:'#0F766E', x:220,  y:1260},
+  {id:'ext-mail', icon:'✉️',  title:'Emails',          sub:'contact · admissions · rh · dpo', color:'#B45309', x:560, y:1260},
+  {id:'ext-php',  icon:'⚙️',  title:'contact.php',     sub:'POST · Honeypot · Rate-limit',    color:'#6D28D9', x:900, y:1260},
+];
+
+// ════════════════════════════════════════════════════════════════════════════
+// RENDU DOM
+// ════════════════════════════════════════════════════════════════════════════
+const world = document.getElementById('world');
+
+// Ancres
+anchors.forEach(a => {
+  const el = document.createElement('div');
+  el.id = 'node-' + a.id;
+  el.style.cssText = `position:absolute;left:${a.x}px;top:${a.y}px;
+    background:#111F3D;border:1.5px solid ${a.color};border-radius:8px;
+    padding:6px 10px;font-size:.7rem;font-family:monospace;color:${a.color};
+    white-space:nowrap;cursor:default;`;
+  el.textContent = a.label;
+  world.appendChild(el);
+});
+
+// Externes
+externals.forEach(e => {
+  const el = document.createElement('div');
+  el.id = 'node-' + e.id;
+  el.className = 'ext-node';
+  el.style.cssText += `left:${e.x}px;top:${e.y}px;border-color:${e.color};`;
+  el.innerHTML = `<div class="en-title" style="color:${e.color}">${e.icon} ${e.title}</div>
+    <div class="en-item">${e.sub}</div>`;
+  world.appendChild(el);
+});
+
+// Pages
+const nodeEls = {};
+pages.forEach(pg => {
+  const el = document.createElement('div');
+  el.id = 'node-' + pg.id;
+  el.className = 'pg';
+  el.style.left = pg.x + 'px';
+  el.style.top  = pg.y + 'px';
+
+  let html = `<div class="pg-head">
+    <span class="pg-icon">${pg.icon}</span>
+    <div><div class="pg-title">${pg.title}</div><div class="pg-url">${pg.url}</div></div>
+  </div><div class="pg-body">`;
+
+  pg.sections.forEach((sec, si) => {
+    if (si > 0) html += '<div class="sec-div"></div>';
+    html += `<div class="sec"><div class="sec-label">${sec.label}</div>`;
+    sec.links.forEach(lnk => {
+      const c = COLORS[lnk.type] || '#fff';
+      const broken = lnk.target === null ? ' ⚠️' : '';
+      html += `<div class="lnk" data-id="${lnk.id}" data-type="${lnk.type}" data-target="${lnk.target||''}" data-dest="${lnk.dest}">
+        <div class="lnk-dot" style="background:${c}"></div>
+        <div class="lnk-txt">${lnk.label}${broken}<span class="lnk-dest">${lnk.dest}</span></div>
+      </div>`;
+    });
+    html += '</div>';
+  });
+
+  html += '</div>';
+  el.innerHTML = html;
+  world.appendChild(el);
+  nodeEls[pg.id] = el;
+});
+
+// ════════════════════════════════════════════════════════════════════════════
+// FLÈCHES SVG
+// ════════════════════════════════════════════════════════════════════════════
+const svg = document.getElementById('svg');
+
+function getCenter(id) {
+  const el = document.getElementById('node-' + id);
+  if (!el) return null;
+  return {
+    x: el.offsetLeft + el.offsetWidth  / 2,
+    y: el.offsetTop  + el.offsetHeight / 2,
+    top:    el.offsetTop,
+    bottom: el.offsetTop  + el.offsetHeight,
+    left:   el.offsetLeft,
+    right:  el.offsetLeft + el.offsetWidth,
+  };
+}
+
+function mkMarker(id, color) {
+  if (svg.querySelector('#mk-' + id)) return;
+  let defs = svg.querySelector('defs');
+  if (!defs) { defs = document.createElementNS('http://www.w3.org/2000/svg','defs'); svg.prepend(defs); }
+  const m = document.createElementNS('http://www.w3.org/2000/svg','marker');
+  m.setAttribute('id','mk-'+id);
+  m.setAttribute('markerWidth','6'); m.setAttribute('markerHeight','6');
+  m.setAttribute('refX','5'); m.setAttribute('refY','3'); m.setAttribute('orient','auto');
+  const p = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+  p.setAttribute('points','0 0, 6 3, 0 6'); p.setAttribute('fill',color); p.setAttribute('opacity','.7');
+  m.appendChild(p); defs.appendChild(m);
+}
+
+// Collecte tous les liens avec source et target
+const allLinks = [];
+pages.forEach(pg => {
+  pg.sections.forEach(sec => {
+    sec.links.forEach(lnk => {
+      allLinks.push({ ...lnk, sourceId: pg.id });
+    });
+  });
+});
+
+function drawEdge(sourceId, targetId, color, linkId, dash=false) {
+  const s = getCenter(sourceId);
+  const t = getCenter(targetId);
+  if (!s || !t) return null;
+
+  mkMarker(color.replace('#',''), color);
+
+  // Choix des points d'attache (bord le plus proche)
+  let x1, y1, x2, y2;
+
+  if (Math.abs(s.x - t.x) > Math.abs(s.y - t.y)) {
+    // Horizontal dominant
+    if (s.x < t.x) { x1=s.right; y1=s.y; x2=t.left; y2=t.y; }
+    else            { x1=s.left;  y1=s.y; x2=t.right;y2=t.y; }
+  } else {
+    // Vertical dominant
+    if (s.y < t.y) { x1=s.x; y1=s.bottom; x2=t.x; y2=t.top; }
+    else            { x1=s.x; y1=s.top;    x2=t.x; y2=t.bottom; }
+  }
+
+  const dx = x2-x1, dy = y2-y1;
+  const cx1 = x1 + dx*.4 + (Math.random()-.5)*40;
+  const cy1 = y1 + dy*.4 + (Math.random()-.5)*40;
+  const cx2 = x1 + dx*.6;
+  const cy2 = y1 + dy*.6;
+
+  const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+  path.setAttribute('d',`M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}`);
+  path.setAttribute('fill','none');
+  path.setAttribute('stroke', color);
+  path.setAttribute('stroke-width','3');
+  path.setAttribute('stroke-opacity','.45');
+  if (dash) path.setAttribute('stroke-dasharray','5,4');
+  path.setAttribute('marker-end','url(#mk-'+color.replace('#','')+')');
+  path.dataset.linkid = linkId;
+  path.dataset.source = sourceId;
+  path.dataset.target = targetId;
+  svg.appendChild(path);
+  return path;
+}
+
+function buildEdges() {
+  // Supprimer anciennes arêtes
+  svg.querySelectorAll('path').forEach(p=>p.remove());
+
+  // Page → page/anchor/ext
+  const drawn = new Set();
+  allLinks.forEach(lnk => {
+    if (!lnk.target) return; // liens cassés: pas de flèche
+    const key = lnk.sourceId + '→' + lnk.target;
+    const color = COLORS[lnk.type] || '#fff';
+    const dashed = lnk.type === 'anchor' || lnk.type === 'form';
+    drawEdge(lnk.sourceId, lnk.target, color, lnk.id, dashed);
+  });
+
+  // Ajuster taille SVG
+  let maxX=0, maxY=0;
+  world.querySelectorAll('[style*="position:absolute"],[class*="pg"],[class*="ext-node"]').forEach(el=>{
+    maxX = Math.max(maxX, el.offsetLeft + el.offsetWidth + 60);
+    maxY = Math.max(maxY, el.offsetTop  + el.offsetHeight + 60);
+  });
+  svg.style.width  = maxX + 'px';
+  svg.style.height = maxY + 'px';
+  world.style.width  = maxX + 'px';
+  world.style.height = maxY + 'px';
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// INTERACTIONS
+// ════════════════════════════════════════════════════════════════════════════
+const tip = document.getElementById('tip');
+const typeLabels = { page:'Page', anchor:'Ancre', ext:'Tel/Ext', mail:'Email', form:'Formulaire POST' };
+const typeColors  = COLORS;
+
+document.querySelectorAll('.lnk').forEach(el => {
+  el.addEventListener('mouseenter', e => {
+    const type = el.dataset.type;
+    const dest = el.dataset.dest;
+    const target = el.dataset.target;
+    const c = COLORS[type] || '#fff';
+
+    // Surligner le lien
+    document.querySelectorAll('.lnk').forEach(l => l.classList.add('faded'));
+    el.classList.remove('faded');
+    el.classList.add('highlighted');
+
+    // Surligner la flèche correspondante
+    svg.querySelectorAll('path').forEach(p => {
+      p.style.strokeOpacity = p.dataset.target === target ? '1' : '.06';
+      p.style.strokeWidth   = p.dataset.target === target ? '5' : '3';
+    });
+
+    // Tooltip
+    const label = el.querySelector('.lnk-txt').childNodes[0].textContent.trim();
+    tip.innerHTML = `<strong>${label}</strong>
+      <div class="tip-dest">${dest}</div>
+      <div class="tip-type" style="background:${c}22;color:${c}">${typeLabels[type]||type}</div>`;
+    tip.style.display = 'block';
+    moveTip(e);
+  });
+
+  el.addEventListener('mousemove', moveTip);
+
+  el.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.lnk').forEach(l => { l.classList.remove('faded','highlighted'); });
+    svg.querySelectorAll('path').forEach(p => {
+      p.style.strokeOpacity = '.45';
+      p.style.strokeWidth   = '3';
+    });
+    tip.style.display = 'none';
+  });
+});
+
+function moveTip(e) {
+  let tx = e.clientX + 14, ty = e.clientY + 14;
+  if (tx + 270 > window.innerWidth)  tx = e.clientX - 280;
+  if (ty + 80  > window.innerHeight) ty = e.clientY - 90;
+  tip.style.left = tx + 'px';
+  tip.style.top  = ty + 'px';
+}
+
+// ── FILTRES ──
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const type = btn.dataset.type;
+
+    document.querySelectorAll('.lnk').forEach(l => {
+      l.style.display = (type === 'all' || l.dataset.type === type) ? 'flex' : 'none';
+    });
+
+    svg.querySelectorAll('path').forEach(p => {
+      const show = (type === 'all') ||
+        allLinks.some(lk => lk.id === p.dataset.linkid && lk.type === type);
+      p.style.strokeOpacity = show ? '.45' : '.05';
+      p.style.strokeWidth   = show ? '3' : '1';
+    });
+  });
+});
+
+// ── DRAG CANVAS & DRAG NODES ──
+const scene = document.getElementById('scene');
+let tx=80, ty=30, scale=.72;
+let canvasDragging=false, canvasSX=0, canvasSY=0;
+let dragNode=null, dragOffX=0, dragOffY=0;
+
+function applyTransform() {
+  world.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`;
+  document.getElementById('zoom-info').textContent = `Zoom: ${Math.round(scale*100)}% · Molette zoomer · Drag fond = déplacer vue · Drag bloc = déplacer bloc`;
+}
+
+function clientToWorld(cx, cy) {
+  const rect = scene.getBoundingClientRect();
+  return { x: (cx - rect.left - tx) / scale, y: (cy - rect.top - ty) / scale };
+}
+
+// Rendre un élément déplaçable (handle = élément sur lequel on clique)
+function makeNodeDraggable(handle, nodeEl) {
+  handle.addEventListener('mousedown', e => {
+    if (e.target.closest('.lnk')) return;
+    e.stopPropagation(); // empêche le drag du canvas
+    const w = clientToWorld(e.clientX, e.clientY);
+    dragOffX = w.x - parseInt(nodeEl.style.left || nodeEl.offsetLeft);
+    dragOffY = w.y - parseInt(nodeEl.style.top  || nodeEl.offsetTop);
+    dragNode = nodeEl;
+    handle.style.cursor = 'grabbing';
+  });
+}
+
+// Attacher le drag aux éléments de page (handle = pg-head)
+document.querySelectorAll('.pg').forEach(pg => {
+  const head = pg.querySelector('.pg-head');
+  if (head) makeNodeDraggable(head, pg);
+});
+// Attacher le drag aux ancres et externes (l'élément entier est le handle)
+world.querySelectorAll('[id^="node-anchor-"],[id^="node-ext-"]').forEach(el => {
+  makeNodeDraggable(el, el);
+});
+
+// Canvas drag (fond)
+scene.addEventListener('mousedown', e => {
+  if (e.target.closest('.lnk') || e.target.closest('.pg-head') ||
+      e.target.closest('[id^="node-anchor-"]') || e.target.closest('[id^="node-ext-"]')) return;
+  canvasDragging=true; canvasSX=e.clientX-tx; canvasSY=e.clientY-ty;
+  scene.classList.add('dragging');
+});
+
+window.addEventListener('mousemove', e => {
+  if (dragNode) {
+    const w = clientToWorld(e.clientX, e.clientY);
+    dragNode.style.left = (w.x - dragOffX) + 'px';
+    dragNode.style.top  = (w.y - dragOffY) + 'px';
+    buildEdges();
+    return;
+  }
+  if (!canvasDragging) return;
+  tx=e.clientX-canvasSX; ty=e.clientY-canvasSY; applyTransform();
+});
+
+window.addEventListener('mouseup', e => {
+  if (dragNode) {
+    // Restaurer le curseur du handle
+    const head = dragNode.querySelector('.pg-head');
+    if (head) head.style.cursor = 'grab';
+    else dragNode.style.cursor = 'grab';
+    dragNode = null;
+    return;
+  }
+  canvasDragging=false; scene.classList.remove('dragging');
+});
+
+scene.addEventListener('wheel', e => {
+  e.preventDefault();
+  const rect = scene.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+  const zf = e.deltaY < 0 ? 1.1 : 0.91;
+  tx = mx - (mx - tx) * zf;
+  ty = my - (my - ty) * zf;
+  scale = Math.min(2, Math.max(.25, scale * zf));
+  applyTransform();
+}, { passive:false });
+
+// Touch support
+let lastDist=0, touchDragNode=null, tDragOffX=0, tDragOffY=0;
+scene.addEventListener('touchstart', e => {
+  if (e.touches.length===1) {
+    const t = e.touches[0];
+    const closest = e.target.closest('.pg-head,[id^="node-anchor-"],[id^="node-ext-"]');
+    if (closest) {
+      const nodeEl = closest.closest('.pg') || closest;
+      const w = clientToWorld(t.clientX, t.clientY);
+      tDragOffX = w.x - parseInt(nodeEl.style.left || nodeEl.offsetLeft);
+      tDragOffY = w.y - parseInt(nodeEl.style.top  || nodeEl.offsetTop);
+      touchDragNode = nodeEl;
+    } else {
+      canvasDragging=true; canvasSX=t.clientX-tx; canvasSY=t.clientY-ty;
+    }
+  }
+  if (e.touches.length===2) lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+});
+scene.addEventListener('touchmove', e => {
+  e.preventDefault();
+  if (e.touches.length===1) {
+    const t = e.touches[0];
+    if (touchDragNode) {
+      const w = clientToWorld(t.clientX, t.clientY);
+      touchDragNode.style.left = (w.x - tDragOffX) + 'px';
+      touchDragNode.style.top  = (w.y - tDragOffY) + 'px';
+      buildEdges();
+    } else if (canvasDragging) {
+      tx=t.clientX-canvasSX; ty=t.clientY-canvasSY; applyTransform();
+    }
+  }
+  if (e.touches.length===2){
+    const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+    scale=Math.min(2,Math.max(.25,scale*(d/lastDist)));lastDist=d;applyTransform();
+  }
+},{passive:false});
+scene.addEventListener('touchend',()=>{ touchDragNode=null; canvasDragging=false; });
+
+// ════════════════════════════════════════════════════════════════════════════
+// EXPORT DRAW.IO
+// ════════════════════════════════════════════════════════════════════════════
+function exportDrawio() {
+  function xe(s) { // xml-escape
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function nodePos(id) {
+    const el = document.getElementById('node-' + id);
+    if (!el) return {x:0,y:0,w:200,h:60};
+    return {
+      x: parseFloat(el.style.left) || el.offsetLeft,
+      y: parseFloat(el.style.top)  || el.offsetTop,
+      w: el.offsetWidth  || 200,
+      h: el.offsetHeight || 60,
+    };
+  }
+
+  const cells = [];
+  let cid = 10;
+  const nid = () => String(cid++);
+  const nodeIds = {};
+
+  // ── Pages ──
+  pages.forEach(pg => {
+    const id = nid();
+    nodeIds[pg.id] = id;
+    const {x,y,w,h} = nodePos(pg.id);
+    // Sections summary as HTML list
+    const secLines = pg.sections.map(s =>
+      `&lt;tr&gt;&lt;td style='font-size:9px;color:#8A9BBF;padding:1px 4px'&gt;${xe(s.label)}&lt;/td&gt;&lt;td style='font-size:9px;color:#5B6E8C;padding:1px 4px'&gt;${s.links.length} lien${s.links.length>1?'s':''}&lt;/td&gt;&lt;/tr&gt;`
+    ).join('');
+    const label = `&lt;b style='font-size:12px'&gt;${xe(pg.icon)} ${xe(pg.title)}&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:9px;color:#8A9BBF'&gt;${xe(pg.url)}&lt;/font&gt;&lt;hr style='border-color:#1D3461;margin:4px 0'/&gt;&lt;table style='border-collapse:collapse;width:100%'&gt;${secLines}&lt;/table&gt;`;
+    cells.push(`<mxCell id="${id}" value="${label}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111F3D;strokeColor=#3A6BC4;fontColor=#FFFFFF;fontSize=12;arcSize=6;verticalAlign=top;align=left;spacingLeft=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1"><mxGeometry x="${x}" y="${y}" width="${w}" height="${h}" as="geometry"/></mxCell>`);
+  });
+
+  // ── Ancres ──
+  anchors.forEach(a => {
+    const id = nid();
+    nodeIds[a.id] = id;
+    const {x,y,w,h} = nodePos(a.id);
+    cells.push(`<mxCell id="${id}" value="${xe(a.label)}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111F3D;strokeColor=${a.color};fontColor=${a.color};fontSize=10;arcSize=50;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="${x}" y="${y}" width="${Math.max(w,120)}" height="${Math.max(h,26)}" as="geometry"/></mxCell>`);
+  });
+
+  // ── Externes ──
+  externals.forEach(e => {
+    const id = nid();
+    nodeIds[e.id] = id;
+    const {x,y,w,h} = nodePos(e.id);
+    const label = `&lt;b&gt;${xe(e.icon)} ${xe(e.title)}&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:9px;color:#8A9BBF'&gt;${xe(e.sub)}&lt;/font&gt;`;
+    cells.push(`<mxCell id="${id}" value="${label}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111F3D;strokeColor=${e.color};fontColor=#FFFFFF;fontSize=11;dashed=1;arcSize=10;" vertex="1" parent="1"><mxGeometry x="${x}" y="${y}" width="${w}" height="${h}" as="geometry"/></mxCell>`);
+  });
+
+  // ── Arêtes (dédupliquées par source+target+type) ──
+  const drawn = new Set();
+  allLinks.forEach(lnk => {
+    if (!lnk.target) return; // liens cassés
+    const key = `${lnk.sourceId}|${lnk.target}|${lnk.type}`;
+    if (drawn.has(key)) return;
+    drawn.add(key);
+    const srcId = nodeIds[lnk.sourceId];
+    const tgtId = nodeIds[lnk.target];
+    if (!srcId || !tgtId) return;
+    const color = COLORS[lnk.type] || '#FFFFFF';
+    const dash = (lnk.type==='anchor'||lnk.type==='form') ? 'dashed=1;dashPattern=8 4;' : '';
+    const typeLabel = {page:'Page',anchor:'Ancre',ext:'Tel/Ext',mail:'Email',form:'Formulaire'}[lnk.type]||'';
+    const eid = nid();
+    cells.push(`<mxCell id="${eid}" value="${xe(typeLabel)}" style="curved=1;${dash}strokeColor=${color};strokeWidth=2.5;endArrow=block;endFill=1;fontSize=8;fontColor=${color};labelBackgroundColor=#111F3D;" edge="1" source="${srcId}" target="${tgtId}" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>`);
+  });
+
+  // ── Assemblage XML ──
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel background="#0A1628" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="1">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    ${cells.join('\n    ')}
+  </root>
+</mxGraphModel>`;
+
+  const blob = new Blob([xml], {type:'application/xml;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'hadrun-carte-liens.drawio';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+
+// ── INIT ──
+applyTransform();
+setTimeout(() => {
+  buildEdges();
+  // Attacher drag sur ancres/externes après rendu (IDs disponibles)
+  world.querySelectorAll('[id^="node-anchor-"],[id^="node-ext-"]').forEach(el => {
+    if (!el._draggable) { makeNodeDraggable(el, el); el._draggable=true; }
+  });
+}, 150);
+</script>
+</body>
+</html>
