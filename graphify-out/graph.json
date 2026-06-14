@@ -1,0 +1,2066 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "launch.json",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/.claude/launch.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "c_github_cyberoot84_github_io_claude_launch_json",
+      "community": 7,
+      "norm_label": "launch.json"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/.claude/launch.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "claude_launch_version",
+      "community": 7,
+      "norm_label": "version"
+    },
+    {
+      "label": "configurations",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/.claude/launch.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "claude_launch_configurations",
+      "community": 7,
+      "norm_label": "configurations"
+    },
+    {
+      "label": "contact.php",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/contact.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "c_github_cyberoot84_github_io_contact_php",
+      "community": 8,
+      "norm_label": "contact.php"
+    },
+    {
+      "label": "main.js",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "c_github_cyberoot84_github_io_js_main_js",
+      "community": 1,
+      "norm_label": "main.js"
+    },
+    {
+      "label": "burger",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "js_main_burger",
+      "community": 1,
+      "norm_label": "burger"
+    },
+    {
+      "label": "nav",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "js_main_nav",
+      "community": 1,
+      "norm_label": "nav"
+    },
+    {
+      "label": "backdrop",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "js_main_backdrop",
+      "community": 1,
+      "norm_label": "backdrop"
+    },
+    {
+      "label": "closeNav()",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "js_main_closenav",
+      "community": 1,
+      "norm_label": "closenav()"
+    },
+    {
+      "label": "scrollBtn",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "js_main_scrollbtn",
+      "community": 1,
+      "norm_label": "scrollbtn"
+    },
+    {
+      "label": "aosObserver",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "js_main_aosobserver",
+      "community": 1,
+      "norm_label": "aosobserver"
+    },
+    {
+      "label": "animateCounter()",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "js_main_animatecounter",
+      "community": 1,
+      "norm_label": "animatecounter()"
+    },
+    {
+      "label": "counterObserver",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L65",
+      "_origin": "ast",
+      "id": "js_main_counterobserver",
+      "community": 1,
+      "norm_label": "counterobserver"
+    },
+    {
+      "label": "form",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "js_main_form",
+      "community": 1,
+      "norm_label": "form"
+    },
+    {
+      "label": "feedback",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "js_main_feedback",
+      "community": 1,
+      "norm_label": "feedback"
+    },
+    {
+      "label": "submitBtn",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "js_main_submitbtn",
+      "community": 1,
+      "norm_label": "submitbtn"
+    },
+    {
+      "label": "header",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L109",
+      "_origin": "ast",
+      "id": "js_main_header",
+      "community": 1,
+      "norm_label": "header"
+    },
+    {
+      "label": "manifest.json",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "c_github_cyberoot84_github_io_manifest_json",
+      "community": 3,
+      "norm_label": "manifest.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "cyberoot84_github_io_manifest_name",
+      "community": 3,
+      "norm_label": "name"
+    },
+    {
+      "label": "short_name",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "cyberoot84_github_io_manifest_short_name",
+      "community": 3,
+      "norm_label": "short_name"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "cyberoot84_github_io_manifest_description",
+      "community": 3,
+      "norm_label": "description"
+    },
+    {
+      "label": "start_url",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "cyberoot84_github_io_manifest_start_url",
+      "community": 3,
+      "norm_label": "start_url"
+    },
+    {
+      "label": "display",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "cyberoot84_github_io_manifest_display",
+      "community": 3,
+      "norm_label": "display"
+    },
+    {
+      "label": "background_color",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "cyberoot84_github_io_manifest_background_color",
+      "community": 3,
+      "norm_label": "background_color"
+    },
+    {
+      "label": "theme_color",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "cyberoot84_github_io_manifest_theme_color",
+      "community": 3,
+      "norm_label": "theme_color"
+    },
+    {
+      "label": "lang",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "cyberoot84_github_io_manifest_lang",
+      "community": 3,
+      "norm_label": "lang"
+    },
+    {
+      "label": "icons",
+      "file_type": "code",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "cyberoot84_github_io_manifest_icons",
+      "community": 3,
+      "norm_label": "icons"
+    },
+    {
+      "label": "HADRUN README",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme",
+      "community": 9,
+      "norm_label": "hadrun readme"
+    },
+    {
+      "label": "Page d'accueil \u2013 HADRUN",
+      "file_type": "document",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": "https://hadrun.fr/",
+      "captured_at": null,
+      "author": "HADRUN",
+      "contributor": null,
+      "id": "index",
+      "community": 0,
+      "norm_label": "page d'accueil \u2013 hadrun"
+    },
+    {
+      "label": "robots.txt \u2013 HADRUN",
+      "file_type": "document",
+      "source_file": "robots.txt",
+      "source_location": null,
+      "source_url": "https://hadrun.fr/robots.txt",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "robots",
+      "community": 2,
+      "norm_label": "robots.txt \u2013 hadrun"
+    },
+    {
+      "label": "Carte des liens \u2013 HADRUN",
+      "file_type": "document",
+      "source_file": "carte-liens.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "carte_liens",
+      "community": 2,
+      "norm_label": "carte des liens \u2013 hadrun"
+    },
+    {
+      "label": "Mentions l\u00e9gales & RGPD \u2013 HADRUN",
+      "file_type": "document",
+      "source_file": "mentions-legales.html",
+      "source_location": null,
+      "source_url": "https://hadrun.fr/mentions-legales.html",
+      "captured_at": null,
+      "author": "HADRUN",
+      "contributor": null,
+      "id": "mentions_legales",
+      "community": 2,
+      "norm_label": "mentions legales & rgpd \u2013 hadrun"
+    },
+    {
+      "label": "Pathologies prises en charge \u2013 HADRUN",
+      "file_type": "document",
+      "source_file": "pages/pathologies.html",
+      "source_location": null,
+      "source_url": "https://hadrun.fr/pages/pathologies.html",
+      "captured_at": null,
+      "author": "HADRUN",
+      "contributor": null,
+      "id": "pages_pathologies",
+      "community": 2,
+      "norm_label": "pathologies prises en charge \u2013 hadrun"
+    },
+    {
+      "label": "Espace professionnels de sant\u00e9 \u2013 HADRUN",
+      "file_type": "document",
+      "source_file": "pages/professionnels.html",
+      "source_location": null,
+      "source_url": "https://hadrun.fr/pages/professionnels.html",
+      "captured_at": null,
+      "author": "HADRUN",
+      "contributor": null,
+      "id": "pages_professionnels",
+      "community": 2,
+      "norm_label": "espace professionnels de sante \u2013 hadrun"
+    },
+    {
+      "label": "Recrutement \u2013 HADRUN La R\u00e9union",
+      "file_type": "document",
+      "source_file": "pages/recrutement.html",
+      "source_location": null,
+      "source_url": "https://hadrun.fr/pages/recrutement.html",
+      "captured_at": null,
+      "author": "HADRUN",
+      "contributor": null,
+      "id": "pages_recrutement",
+      "community": 2,
+      "norm_label": "recrutement \u2013 hadrun la reunion"
+    },
+    {
+      "label": "HADRUN \u2013 Organisation m\u00e9dicale",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "script[type='application/ld+json']",
+      "source_url": "https://hadrun.fr/#organization",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "hadrun_organisation",
+      "community": 0,
+      "norm_label": "hadrun \u2013 organisation medicale"
+    },
+    {
+      "label": "Hospitalisation \u00e0 Domicile (HAD)",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "#faq",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "had_service",
+      "community": 0,
+      "norm_label": "hospitalisation a domicile (had)"
+    },
+    {
+      "label": "Soins palliatifs \u00e0 domicile",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "soins_palliatifs",
+      "community": 0,
+      "norm_label": "soins palliatifs a domicile"
+    },
+    {
+      "label": "Pansements complexes",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "pansements_complexes",
+      "community": 0,
+      "norm_label": "pansements complexes"
+    },
+    {
+      "label": "Perfusions & traitements IV",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "perfusions_iv",
+      "community": 0,
+      "norm_label": "perfusions & traitements iv"
+    },
+    {
+      "label": "Chimioth\u00e9rapie \u00e0 domicile",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "chimiotherapie_domicile",
+      "community": 0,
+      "norm_label": "chimiotherapie a domicile"
+    },
+    {
+      "label": "Post-op\u00e9ratoire & r\u00e9\u00e9ducation",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "postoperatoire_reeducation",
+      "community": 0,
+      "norm_label": "post-operatoire & reeducation"
+    },
+    {
+      "label": "Nutrition \u00e0 domicile",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "nutrition_domicile",
+      "community": 0,
+      "norm_label": "nutrition a domicile"
+    },
+    {
+      "label": "Traitements par cure it\u00e9rative",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "traitements_cure_iterative",
+      "community": 0,
+      "norm_label": "traitements par cure iterative"
+    },
+    {
+      "label": "Processus d'admission HAD",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "#comment-ca-marche",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "admission_process",
+      "community": 0,
+      "norm_label": "processus d'admission had"
+    },
+    {
+      "label": "Feuille de style principale (style.css)",
+      "file_type": "code",
+      "source_file": "index.html",
+      "source_location": "<link rel='stylesheet' href='/css/style.css'>",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "css_style",
+      "community": 2,
+      "norm_label": "feuille de style principale (style.css)"
+    },
+    {
+      "label": "Script principal (main.js)",
+      "file_type": "code",
+      "source_file": "index.html",
+      "source_location": "<script src='/js/main.js'>",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "js_main",
+      "community": 0,
+      "norm_label": "script principal (main.js)"
+    },
+    {
+      "label": "PWA manifest.json",
+      "file_type": "code",
+      "source_file": "index.html",
+      "source_location": "<link rel='manifest'>",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "manifest_json",
+      "community": 0,
+      "norm_label": "pwa manifest.json"
+    },
+    {
+      "label": "contact.php \u2013 endpoint formulaire POST",
+      "file_type": "code",
+      "source_file": "index.html",
+      "source_location": "<form action='/contact.php'>",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "contact_php",
+      "community": 2,
+      "norm_label": "contact.php \u2013 endpoint formulaire post"
+    },
+    {
+      "label": "Politique RGPD HADRUN",
+      "file_type": "concept",
+      "source_file": "mentions-legales.html",
+      "source_location": "#rgpd",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "rgpd_policy",
+      "community": 2,
+      "norm_label": "politique rgpd hadrun"
+    },
+    {
+      "label": "Politique cookies HADRUN",
+      "file_type": "concept",
+      "source_file": "mentions-legales.html",
+      "source_location": "#cookies",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "cookies_policy",
+      "community": 2,
+      "norm_label": "politique cookies hadrun"
+    },
+    {
+      "label": "Outil ADOP-HAD (HAS) \u2013 v\u00e9rification \u00e9ligibilit\u00e9",
+      "file_type": "document",
+      "source_file": "index.html",
+      "source_location": "#faq",
+      "source_url": "https://adophad.has-sante.fr/pages/admission",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "adophad_has",
+      "community": 0,
+      "norm_label": "outil adop-had (has) \u2013 verification eligibilite"
+    },
+    {
+      "label": "CNIL \u2013 Commission Nationale Informatique et Libert\u00e9s",
+      "file_type": "document",
+      "source_file": "mentions-legales.html",
+      "source_location": "#rgpd",
+      "source_url": "https://www.cnil.fr",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "cnil_fr",
+      "community": 2,
+      "norm_label": "cnil \u2013 commission nationale informatique et libertes"
+    },
+    {
+      "label": "Google Fonts (Poppins + Inter)",
+      "file_type": "code",
+      "source_file": "index.html",
+      "source_location": "<link rel='stylesheet' href='https://fonts.googleapis.com/...'>",
+      "source_url": "https://fonts.googleapis.com",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "google_fonts",
+      "community": 2,
+      "norm_label": "google fonts (poppins + inter)"
+    },
+    {
+      "label": "sitemap.xml \u2013 HADRUN",
+      "file_type": "document",
+      "source_file": "robots.txt",
+      "source_location": "Sitemap directive",
+      "source_url": "https://hadrun.fr/sitemap.xml",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "sitemap_xml",
+      "community": 2,
+      "norm_label": "sitemap.xml \u2013 hadrun"
+    },
+    {
+      "label": "HADRUN Favicon",
+      "file_type": "image",
+      "source_file": "images/favicon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_favicon_hadrun_logo",
+      "community": 6,
+      "norm_label": "hadrun favicon"
+    },
+    {
+      "label": "House/Home Shape",
+      "file_type": "concept",
+      "source_file": "images/favicon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_favicon_house_shape",
+      "community": 6,
+      "norm_label": "house/home shape"
+    },
+    {
+      "label": "Stethoscope Shape",
+      "file_type": "concept",
+      "source_file": "images/favicon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_favicon_stethoscope_shape",
+      "community": 6,
+      "norm_label": "stethoscope shape"
+    },
+    {
+      "label": "Navy Blue Background (#1D3461)",
+      "file_type": "concept",
+      "source_file": "images/favicon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_favicon_navy_background",
+      "community": 6,
+      "norm_label": "navy blue background (#1d3461)"
+    },
+    {
+      "label": "Rose/Pink Brand Color (#C94070)",
+      "file_type": "concept",
+      "source_file": "images/favicon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_favicon_rose_color",
+      "community": 6,
+      "norm_label": "rose/pink brand color (#c94070)"
+    },
+    {
+      "label": "Home Healthcare / Medical Home Concept",
+      "file_type": "concept",
+      "source_file": "images/favicon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_favicon_healthcare_home_concept",
+      "community": 6,
+      "norm_label": "home healthcare / medical home concept"
+    },
+    {
+      "label": "HADRUN Logo",
+      "file_type": "image",
+      "source_file": "images/logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_logo_hadrun_brand",
+      "community": 4,
+      "norm_label": "hadrun logo"
+    },
+    {
+      "label": "HAD RUN",
+      "file_type": "concept",
+      "source_file": "images/logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_logo_brand_name",
+      "community": 4,
+      "norm_label": "had run"
+    },
+    {
+      "label": "Hospitalisation A Domicile",
+      "file_type": "concept",
+      "source_file": "images/logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_logo_tagline",
+      "community": 4,
+      "norm_label": "hospitalisation a domicile"
+    },
+    {
+      "label": "House Icon",
+      "file_type": "image",
+      "source_file": "images/logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_logo_icon_house",
+      "community": 4,
+      "norm_label": "house icon"
+    },
+    {
+      "label": "Stethoscope Icon",
+      "file_type": "image",
+      "source_file": "images/logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_logo_icon_stethoscope",
+      "community": 4,
+      "norm_label": "stethoscope icon"
+    },
+    {
+      "label": "Blue Color (#2B5BA8 approx)",
+      "file_type": "concept",
+      "source_file": "images/logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_logo_color_blue",
+      "community": 4,
+      "norm_label": "blue color (#2b5ba8 approx)"
+    },
+    {
+      "label": "Pink/Rose Color",
+      "file_type": "concept",
+      "source_file": "images/logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_logo_color_pink",
+      "community": 4,
+      "norm_label": "pink/rose color"
+    },
+    {
+      "label": "Home Healthcare / HAD",
+      "file_type": "concept",
+      "source_file": "images/logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_logo_domain_healthcare",
+      "community": 4,
+      "norm_label": "home healthcare / had"
+    },
+    {
+      "label": "Parcours de prise en charge du patient en HAD",
+      "type": "image",
+      "file_type": "image",
+      "description": "Infographic illustrating the 6-step patient care pathway in HAD (Hospitalisation A Domicile - Home Hospitalization). Shows a sequential process from prescription to end of care, with icons and descriptions for each step.",
+      "properties": {
+        "title": "Parcours de prise en charge du patient en HAD",
+        "language": "French",
+        "format": "webp",
+        "visual_style": "flat design infographic with numbered steps and arrows",
+        "tagline": "L'HAD assure des soins de qualit\u00e9, au plus pr\u00e8s du patient, tout au long de son parcours."
+      },
+      "id": "images_parcours_had_infographic",
+      "community": 5,
+      "norm_label": "parcours de prise en charge du patient en had"
+    },
+    {
+      "label": "\u00c9tape 1 - Prescription",
+      "type": "concept",
+      "file_type": "concept",
+      "description": "First step of the HAD patient care pathway. The prescription is made by the doctor in charge of the patient.",
+      "properties": {
+        "step_number": 1,
+        "actor": "M\u00e9decin en charge du patient",
+        "action": "Prescription r\u00e9alis\u00e9e par le m\u00e9decin en charge du patient",
+        "icon": "prescription pad / ordonnance"
+      },
+      "id": "images_parcours_had_step1_prescription",
+      "community": 5,
+      "norm_label": "etape 1 - prescription"
+    },
+    {
+      "label": "\u00c9tape 2 - \u00c9valuation",
+      "type": "concept",
+      "file_type": "concept",
+      "description": "Second step of the HAD patient care pathway. Evaluation of the care request by a nursing advisor (infirmi\u00e8re de Conseil et de Liaison).",
+      "properties": {
+        "step_number": 2,
+        "actor": "Infirmier(\u00e8re) de Conseil et de Liaison",
+        "action": "\u00c9valuation de la demande de prise en charge",
+        "icon": "checklist with person"
+      },
+      "id": "images_parcours_had_step2_evaluation",
+      "community": 5,
+      "norm_label": "etape 2 - evaluation"
+    },
+    {
+      "label": "\u00c9tape 3 - D\u00e9cision",
+      "type": "concept",
+      "file_type": "concept",
+      "description": "Third step of the HAD patient care pathway. The coordinating doctor gives their agreement/approval for the care.",
+      "properties": {
+        "step_number": 3,
+        "actor": "M\u00e9decin coordonnateur",
+        "action": "Accord donn\u00e9 par le m\u00e9decin coordonnateur",
+        "icon": "doctor with checkmark"
+      },
+      "id": "images_parcours_had_step3_decision",
+      "community": 5,
+      "norm_label": "etape 3 - decision"
+    },
+    {
+      "label": "\u00c9tape 4 - Mise en place au domicile de l'HAD",
+      "type": "concept",
+      "file_type": "concept",
+      "description": "Fourth step of the HAD patient care pathway. The HAD team sets up care at the patient's home.",
+      "properties": {
+        "step_number": 4,
+        "actor": "\u00c9quipe de l'HADRUN",
+        "action": "Mise en place au domicile de l'HAD par l'\u00e9quipe de l'HADRUN",
+        "icon": "house / home"
+      },
+      "id": "images_parcours_had_step4_mise_en_place",
+      "community": 5,
+      "norm_label": "etape 4 - mise en place au domicile de l'had"
+    },
+    {
+      "label": "\u00c9tape 5 - R\u00e9alisation des soins",
+      "type": "concept",
+      "file_type": "concept",
+      "description": "Fifth step of the HAD patient care pathway. Healthcare professionals carry out the care.",
+      "properties": {
+        "step_number": 5,
+        "actor": "Professionnels de sant\u00e9",
+        "action": "R\u00e9alisation des soins par les professionnels de sant\u00e9",
+        "icon": "hands with medical cross"
+      },
+      "id": "images_parcours_had_step5_realisation_soins",
+      "community": 5,
+      "norm_label": "etape 5 - realisation des soins"
+    },
+    {
+      "label": "\u00c9tape 6 - Fin de la prise en charge du patient",
+      "type": "concept",
+      "file_type": "concept",
+      "description": "Sixth and final step of the HAD patient care pathway. End of care is validated by the medical staff.",
+      "properties": {
+        "step_number": 6,
+        "actor": "Corps m\u00e9dical",
+        "action": "Fin de la prise en charge valid\u00e9e par le corps m\u00e9dical",
+        "icon": "checkmark circle"
+      },
+      "id": "images_parcours_had_step6_fin_prise_en_charge",
+      "community": 5,
+      "norm_label": "etape 6 - fin de la prise en charge du patient"
+    },
+    {
+      "label": "HAD - Hospitalisation A Domicile",
+      "type": "concept",
+      "file_type": "concept",
+      "description": "HAD (Hospitalisation A Domicile) is a French home hospitalization service that provides quality care close to the patient throughout their care pathway. The organization referenced is HADRUN.",
+      "properties": {
+        "organization": "HADRUN",
+        "mission": "Assurer des soins de qualit\u00e9, au plus pr\u00e8s du patient, tout au long de son parcours"
+      },
+      "id": "images_parcours_had_had_concept",
+      "community": 5,
+      "norm_label": "had - hospitalisation a domicile"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/.claude/launch.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_claude_launch_json",
+      "target": "claude_launch_configurations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/.claude/launch.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_claude_launch_json",
+      "target": "claude_launch_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_animatecounter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_aosobserver",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_backdrop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_burger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_closenav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_counterobserver",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_feedback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_form",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_header",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_scrollbtn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/js/main.js",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_js_main_js",
+      "target": "js_main_submitbtn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_manifest_json",
+      "target": "cyberoot84_github_io_manifest_background_color",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_manifest_json",
+      "target": "cyberoot84_github_io_manifest_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_manifest_json",
+      "target": "cyberoot84_github_io_manifest_display",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_manifest_json",
+      "target": "cyberoot84_github_io_manifest_icons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_manifest_json",
+      "target": "cyberoot84_github_io_manifest_lang",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_manifest_json",
+      "target": "cyberoot84_github_io_manifest_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_manifest_json",
+      "target": "cyberoot84_github_io_manifest_short_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_manifest_json",
+      "target": "cyberoot84_github_io_manifest_start_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Github/cyberoot84.github.io/manifest.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "c_github_cyberoot84_github_io_manifest_json",
+      "target": "cyberoot84_github_io_manifest_theme_color",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "carte-liens.html",
+      "source_location": "pages[] data",
+      "weight": 1.0,
+      "source": "carte_liens",
+      "target": "index"
+    },
+    {
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "#comment-ca-marche",
+      "weight": 1.0,
+      "source": "index",
+      "target": "admission_process"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "#faq conditions HAD",
+      "weight": 1.0,
+      "source": "index",
+      "target": "adophad_has"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "weight": 1.0,
+      "source": "index",
+      "target": "chimiotherapie_domicile"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "<form action='/contact.php'>",
+      "weight": 1.0,
+      "source": "index",
+      "target": "contact_php"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "<link rel='stylesheet' href='/css/style.css'>",
+      "weight": 1.0,
+      "source": "index",
+      "target": "css_style"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "<link rel='stylesheet' href='https://fonts.googleapis.com/...'>",
+      "weight": 1.0,
+      "source": "index",
+      "target": "google_fonts"
+    },
+    {
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "#faq",
+      "weight": 1.0,
+      "source": "index",
+      "target": "had_service"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "script[type='application/ld+json']",
+      "weight": 1.0,
+      "source": "index",
+      "target": "hadrun_organisation"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "<script src='/js/main.js' defer>",
+      "weight": 1.0,
+      "source": "index",
+      "target": "js_main"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "<link rel='manifest' href='/manifest.json'>",
+      "weight": 1.0,
+      "source": "index",
+      "target": "manifest_json"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "footer",
+      "weight": 1.0,
+      "source": "index",
+      "target": "mentions_legales"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "weight": 1.0,
+      "source": "index",
+      "target": "nutrition_domicile"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "nav + footer links",
+      "weight": 1.0,
+      "source": "index",
+      "target": "pages_pathologies"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "nav + footer links",
+      "weight": 1.0,
+      "source": "index",
+      "target": "pages_professionnels"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "nav link",
+      "weight": 1.0,
+      "source": "index",
+      "target": "pages_recrutement"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "weight": 1.0,
+      "source": "index",
+      "target": "pansements_complexes"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "weight": 1.0,
+      "source": "index",
+      "target": "perfusions_iv"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "weight": 1.0,
+      "source": "index",
+      "target": "postoperatoire_reeducation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "weight": 1.0,
+      "source": "index",
+      "target": "soins_palliatifs"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "#soins",
+      "weight": 1.0,
+      "source": "index",
+      "target": "traitements_cure_iterative"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "robots.txt",
+      "source_location": "Disallow: /contact.php",
+      "weight": 1.0,
+      "source": "robots",
+      "target": "contact_php"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "robots.txt",
+      "source_location": "Sitemap: directive",
+      "weight": 1.0,
+      "source": "robots",
+      "target": "sitemap_xml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "carte-liens.html",
+      "source_location": "ext-php external node",
+      "weight": 1.0,
+      "source": "carte_liens",
+      "target": "contact_php"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "carte-liens.html",
+      "source_location": "pages[] data",
+      "weight": 1.0,
+      "source": "carte_liens",
+      "target": "mentions_legales"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "carte-liens.html",
+      "source_location": "pages[] data",
+      "weight": 1.0,
+      "source": "carte_liens",
+      "target": "pages_pathologies"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "carte-liens.html",
+      "source_location": "pages[] data",
+      "weight": 1.0,
+      "source": "carte_liens",
+      "target": "pages_professionnels"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "carte-liens.html",
+      "source_location": "pages[] data",
+      "weight": 1.0,
+      "source": "carte_liens",
+      "target": "pages_recrutement"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mentions-legales.html",
+      "source_location": "#rgpd droits section",
+      "weight": 1.0,
+      "source": "mentions_legales",
+      "target": "cnil_fr"
+    },
+    {
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mentions-legales.html",
+      "source_location": "#cookies section",
+      "weight": 1.0,
+      "source": "mentions_legales",
+      "target": "cookies_policy"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mentions-legales.html",
+      "source_location": "<link rel='stylesheet'>",
+      "weight": 1.0,
+      "source": "mentions_legales",
+      "target": "css_style"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mentions-legales.html",
+      "source_location": "<link rel='stylesheet' href='https://fonts.googleapis.com/...'>",
+      "weight": 1.0,
+      "source": "mentions_legales",
+      "target": "google_fonts"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mentions-legales.html",
+      "source_location": "nav link",
+      "weight": 1.0,
+      "source": "mentions_legales",
+      "target": "pages_recrutement"
+    },
+    {
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mentions-legales.html",
+      "source_location": "#rgpd section",
+      "weight": 1.0,
+      "source": "mentions_legales",
+      "target": "rgpd_policy"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/pathologies.html",
+      "source_location": "footer link",
+      "weight": 1.0,
+      "source": "pages_pathologies",
+      "target": "mentions_legales"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/professionnels.html",
+      "source_location": "footer + RGPD link",
+      "weight": 1.0,
+      "source": "pages_professionnels",
+      "target": "mentions_legales"
+    },
+    {
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/pathologies.html",
+      "source_location": "#chimiotherapie anchor",
+      "weight": 1.0,
+      "source": "pages_pathologies",
+      "target": "chimiotherapie_domicile"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/pathologies.html",
+      "source_location": "<link rel='stylesheet'>",
+      "weight": 1.0,
+      "source": "pages_pathologies",
+      "target": "css_style"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/pathologies.html",
+      "source_location": "<link rel='stylesheet' href='https://fonts.googleapis.com/...'>",
+      "weight": 1.0,
+      "source": "pages_pathologies",
+      "target": "google_fonts"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/pathologies.html",
+      "source_location": "footer link",
+      "weight": 1.0,
+      "source": "pages_pathologies",
+      "target": "pages_professionnels"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/pathologies.html",
+      "source_location": "nav link",
+      "weight": 1.0,
+      "source": "pages_pathologies",
+      "target": "pages_recrutement"
+    },
+    {
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/pathologies.html",
+      "source_location": "#pansements anchor",
+      "weight": 1.0,
+      "source": "pages_pathologies",
+      "target": "pansements_complexes"
+    },
+    {
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/pathologies.html",
+      "source_location": "#perfusions anchor",
+      "weight": 1.0,
+      "source": "pages_pathologies",
+      "target": "perfusions_iv"
+    },
+    {
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/pathologies.html",
+      "source_location": "#postoperatoire anchor",
+      "weight": 1.0,
+      "source": "pages_pathologies",
+      "target": "postoperatoire_reeducation"
+    },
+    {
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/pathologies.html",
+      "source_location": "#palliatifs anchor",
+      "weight": 1.0,
+      "source": "pages_pathologies",
+      "target": "soins_palliatifs"
+    },
+    {
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/professionnels.html",
+      "source_location": "#admissions section",
+      "weight": 1.0,
+      "source": "pages_professionnels",
+      "target": "admission_process"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/professionnels.html",
+      "source_location": "#formulaire form action",
+      "weight": 1.0,
+      "source": "pages_professionnels",
+      "target": "contact_php"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/professionnels.html",
+      "source_location": "<link rel='stylesheet'>",
+      "weight": 1.0,
+      "source": "pages_professionnels",
+      "target": "css_style"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/professionnels.html",
+      "source_location": "<link rel='stylesheet' href='https://fonts.googleapis.com/...'>",
+      "weight": 1.0,
+      "source": "pages_professionnels",
+      "target": "google_fonts"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/professionnels.html",
+      "source_location": "nav link",
+      "weight": 1.0,
+      "source": "pages_professionnels",
+      "target": "pages_recrutement"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/recrutement.html",
+      "source_location": "#candidature form action",
+      "weight": 1.0,
+      "source": "pages_recrutement",
+      "target": "contact_php"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/recrutement.html",
+      "source_location": "<link rel='stylesheet'>",
+      "weight": 1.0,
+      "source": "pages_recrutement",
+      "target": "css_style"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pages/recrutement.html",
+      "source_location": "<link rel='stylesheet' href='https://fonts.googleapis.com/...'>",
+      "weight": 1.0,
+      "source": "pages_recrutement",
+      "target": "google_fonts"
+    },
+    {
+      "relation": "provides",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "index.html",
+      "source_location": "schema.org MedicalOrganization",
+      "weight": 1.0,
+      "source": "hadrun_organisation",
+      "target": "had_service"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "index.html",
+      "source_location": "#comment-ca-marche",
+      "weight": 1.0,
+      "source": "had_service",
+      "target": "admission_process"
+    },
+    {
+      "relation": "includes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "index.html",
+      "source_location": "#soins section",
+      "weight": 1.0,
+      "source": "had_service",
+      "target": "chimiotherapie_domicile"
+    },
+    {
+      "relation": "includes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "index.html",
+      "source_location": "#soins section",
+      "weight": 1.0,
+      "source": "had_service",
+      "target": "nutrition_domicile"
+    },
+    {
+      "relation": "includes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "index.html",
+      "source_location": "#soins section",
+      "weight": 1.0,
+      "source": "had_service",
+      "target": "pansements_complexes"
+    },
+    {
+      "relation": "includes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "index.html",
+      "source_location": "#soins section",
+      "weight": 1.0,
+      "source": "had_service",
+      "target": "perfusions_iv"
+    },
+    {
+      "relation": "includes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "index.html",
+      "source_location": "#soins section",
+      "weight": 1.0,
+      "source": "had_service",
+      "target": "postoperatoire_reeducation"
+    },
+    {
+      "relation": "includes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "index.html",
+      "source_location": "#soins section",
+      "weight": 1.0,
+      "source": "had_service",
+      "target": "soins_palliatifs"
+    },
+    {
+      "relation": "includes",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "index.html",
+      "source_location": "#soins section",
+      "weight": 1.0,
+      "source": "had_service",
+      "target": "traitements_cure_iterative"
+    },
+    {
+      "relation": "governs",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "mentions-legales.html",
+      "source_location": "#rgpd donn\u00e9es collect\u00e9es via formulaire",
+      "weight": 1.0,
+      "source": "rgpd_policy",
+      "target": "contact_php"
+    },
+    {
+      "relation": "SYMBOLIZES",
+      "rationale": "The combined icon of a house with a stethoscope overlaid symbolizes home-based healthcare, consistent with the HADRUN brand",
+      "extraction_type": "INFERRED",
+      "confidence_score": 0.85,
+      "source": "images_favicon_hadrun_logo",
+      "target": "images_favicon_healthcare_home_concept"
+    },
+    {
+      "relation": "CONTAINS",
+      "rationale": "The SVG contains a pentagonal house/home shape drawn with a path element",
+      "extraction_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "images_favicon_hadrun_logo",
+      "target": "images_favicon_house_shape"
+    },
+    {
+      "relation": "USES_COLOR",
+      "rationale": "The rounded-rectangle background uses fill #1D3461 (navy blue)",
+      "extraction_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "images_favicon_hadrun_logo",
+      "target": "images_favicon_navy_background"
+    },
+    {
+      "relation": "USES_COLOR",
+      "rationale": "Both the house outline and stethoscope elements use stroke/fill #C94070 (rose/pink)",
+      "extraction_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "images_favicon_hadrun_logo",
+      "target": "images_favicon_rose_color"
+    },
+    {
+      "relation": "CONTAINS",
+      "rationale": "The SVG contains stethoscope elements: two earpiece circles, a curved tube path, and a chest piece circle",
+      "extraction_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "images_favicon_hadrun_logo",
+      "target": "images_favicon_stethoscope_shape"
+    },
+    {
+      "relation": "REPRESENTS",
+      "rationale": "House shape combined with stethoscope suggests home healthcare or medical home services",
+      "extraction_type": "INFERRED",
+      "confidence_score": 0.95,
+      "source": "images_favicon_house_shape",
+      "target": "images_favicon_healthcare_home_concept"
+    },
+    {
+      "relation": "REPRESENTS",
+      "rationale": "Stethoscope is a universal medical/healthcare symbol",
+      "extraction_type": "INFERRED",
+      "confidence_score": 0.95,
+      "source": "images_favicon_stethoscope_shape",
+      "target": "images_favicon_healthcare_home_concept"
+    },
+    {
+      "from": "images_logo_hadrun_brand",
+      "to": "images_logo_brand_name",
+      "relation": "contains_text",
+      "confidence_score": 1.0,
+      "source": "images_logo_hadrun_brand",
+      "target": "images_logo_brand_name"
+    },
+    {
+      "from": "images_logo_hadrun_brand",
+      "to": "images_logo_color_blue",
+      "relation": "uses_color",
+      "confidence_score": 1.0,
+      "source": "images_logo_hadrun_brand",
+      "target": "images_logo_color_blue"
+    },
+    {
+      "from": "images_logo_hadrun_brand",
+      "to": "images_logo_color_pink",
+      "relation": "uses_color",
+      "confidence_score": 1.0,
+      "source": "images_logo_hadrun_brand",
+      "target": "images_logo_color_pink"
+    },
+    {
+      "from": "images_logo_hadrun_brand",
+      "to": "images_logo_domain_healthcare",
+      "relation": "represents_domain",
+      "confidence_score": 1.0,
+      "source": "images_logo_hadrun_brand",
+      "target": "images_logo_domain_healthcare"
+    },
+    {
+      "from": "images_logo_hadrun_brand",
+      "to": "images_logo_icon_house",
+      "relation": "contains_visual_element",
+      "confidence_score": 1.0,
+      "source": "images_logo_hadrun_brand",
+      "target": "images_logo_icon_house"
+    },
+    {
+      "from": "images_logo_hadrun_brand",
+      "to": "images_logo_icon_stethoscope",
+      "relation": "contains_visual_element",
+      "confidence_score": 1.0,
+      "source": "images_logo_hadrun_brand",
+      "target": "images_logo_icon_stethoscope"
+    },
+    {
+      "from": "images_logo_hadrun_brand",
+      "to": "images_logo_tagline",
+      "relation": "contains_text",
+      "confidence_score": 1.0,
+      "source": "images_logo_hadrun_brand",
+      "target": "images_logo_tagline"
+    },
+    {
+      "from": "images_logo_brand_name",
+      "to": "images_logo_color_blue",
+      "relation": "styled_with",
+      "confidence_score": 1.0,
+      "source": "images_logo_brand_name",
+      "target": "images_logo_color_blue"
+    },
+    {
+      "from": "images_logo_tagline",
+      "to": "images_logo_color_pink",
+      "relation": "styled_with",
+      "confidence_score": 1.0,
+      "source": "images_logo_tagline",
+      "target": "images_logo_color_pink"
+    },
+    {
+      "from": "images_logo_tagline",
+      "to": "images_logo_domain_healthcare",
+      "relation": "describes",
+      "confidence_score": 1.0,
+      "source": "images_logo_tagline",
+      "target": "images_logo_domain_healthcare"
+    },
+    {
+      "from": "images_logo_icon_house",
+      "to": "images_logo_color_pink",
+      "relation": "styled_with",
+      "confidence_score": 1.0,
+      "source": "images_logo_icon_house",
+      "target": "images_logo_color_pink"
+    },
+    {
+      "from": "images_logo_icon_house",
+      "to": "images_logo_domain_healthcare",
+      "relation": "symbolizes",
+      "confidence_score": 0.95,
+      "source": "images_logo_icon_house",
+      "target": "images_logo_domain_healthcare"
+    },
+    {
+      "from": "images_logo_icon_stethoscope",
+      "to": "images_logo_icon_house",
+      "relation": "embedded_within",
+      "confidence_score": 1.0,
+      "source": "images_logo_icon_stethoscope",
+      "target": "images_logo_icon_house"
+    },
+    {
+      "from": "images_logo_icon_stethoscope",
+      "to": "images_logo_color_pink",
+      "relation": "styled_with",
+      "confidence_score": 1.0,
+      "source": "images_logo_icon_stethoscope",
+      "target": "images_logo_color_pink"
+    },
+    {
+      "from": "images_logo_icon_stethoscope",
+      "to": "images_logo_domain_healthcare",
+      "relation": "symbolizes",
+      "confidence_score": 1.0,
+      "source": "images_logo_icon_stethoscope",
+      "target": "images_logo_domain_healthcare"
+    },
+    {
+      "relation": "describes",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_infographic",
+      "target": "images_parcours_had_had_concept"
+    },
+    {
+      "relation": "contains_step",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_infographic",
+      "target": "images_parcours_had_step1_prescription"
+    },
+    {
+      "relation": "contains_step",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_infographic",
+      "target": "images_parcours_had_step2_evaluation"
+    },
+    {
+      "relation": "contains_step",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_infographic",
+      "target": "images_parcours_had_step3_decision"
+    },
+    {
+      "relation": "contains_step",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_infographic",
+      "target": "images_parcours_had_step4_mise_en_place"
+    },
+    {
+      "relation": "contains_step",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_infographic",
+      "target": "images_parcours_had_step5_realisation_soins"
+    },
+    {
+      "relation": "contains_step",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_infographic",
+      "target": "images_parcours_had_step6_fin_prise_en_charge"
+    },
+    {
+      "relation": "precedes",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_step1_prescription",
+      "target": "images_parcours_had_step2_evaluation"
+    },
+    {
+      "relation": "precedes",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_step2_evaluation",
+      "target": "images_parcours_had_step3_decision"
+    },
+    {
+      "relation": "precedes",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_step3_decision",
+      "target": "images_parcours_had_step4_mise_en_place"
+    },
+    {
+      "relation": "executes",
+      "confidence_score": 0.95,
+      "source": "images_parcours_had_had_concept",
+      "target": "images_parcours_had_step4_mise_en_place"
+    },
+    {
+      "relation": "precedes",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_step4_mise_en_place",
+      "target": "images_parcours_had_step5_realisation_soins"
+    },
+    {
+      "relation": "executes",
+      "confidence_score": 0.95,
+      "source": "images_parcours_had_had_concept",
+      "target": "images_parcours_had_step5_realisation_soins"
+    },
+    {
+      "relation": "precedes",
+      "confidence_score": 1.0,
+      "source": "images_parcours_had_step5_realisation_soins",
+      "target": "images_parcours_had_step6_fin_prise_en_charge"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "41ebd1c57832dd509e70a50ebae8d49630d5921e"
+}
