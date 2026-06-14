@@ -842,6 +842,9 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 .footer-bottom ul { display: flex; gap: 1.75rem; }
 .footer-bottom a { color: rgba(255,255,255,.38); transition: var(--transition); }
 .footer-bottom a:hover { color: rgba(255,255,255,.8); }
+.footer-social { display: flex; gap: 1rem; align-items: center; }
+.footer-social a { display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.5); transition: var(--transition); }
+.footer-social a:hover { color: #fff; border-color: rgba(255,255,255,.6); background: rgba(255,255,255,.08); }
 
 /* ===== SCROLL TOP ===== */
 .scroll-top {
